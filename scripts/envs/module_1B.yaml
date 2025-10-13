@@ -1,0 +1,9 @@
+name: module_1B
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - samtools
+  - subread
+  - jq
+  - coreutils

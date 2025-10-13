@@ -1,0 +1,14 @@
+name: go_hallmark_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.3
+  - r-data.table>=1.14
+  - r-optparse
+  - bioconductor-annotationdbi=1.64.*
+  - bioconductor-org.hs.eg.db=3.18.0
+  - bioconductor-go.db=3.18.0
+  - r-msigdbr
+  - r-dplyr
+  - r-tidyr

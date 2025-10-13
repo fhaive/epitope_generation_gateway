@@ -1,0 +1,7 @@
+name: module_2C_VEP
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - ensembl-vep=114
+  - htslib

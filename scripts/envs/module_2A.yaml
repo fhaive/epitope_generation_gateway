@@ -1,0 +1,19 @@
+name: module_2A
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - perl
+  - perl-dbi
+  - perl-dbd-mysql
+  - perl-json
+  - perl-archive-zip
+  - curl
+  - git
+  - ensembl-vep=103 
+  - kallisto=0.46.1
+  - vcftools
+  - bcftools
+  - pip                # ensure pip is installed in the environment
+  - pip:
+      - vatools

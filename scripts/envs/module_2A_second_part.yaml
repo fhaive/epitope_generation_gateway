@@ -1,0 +1,10 @@
+name: module_2A_second_part
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - openjdk=8                 # GATK 3.6 requires Java 8
+  - gatk=3.6.0
+  - picard
+  - htslib
+  - openjdk 

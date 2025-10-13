@@ -1,0 +1,13 @@
+name: module_2C
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - regtools
+  - samtools
+  - hisat2
+  - python=3.8  # or whatever version you're using
+  - pandas
+  - pip
+  - pip:
+      - gtfparse

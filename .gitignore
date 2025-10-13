@@ -1,0 +1,48 @@
+# Ignore ALL dotfiles…
+.*
+# …but keep these
+!.gitignore
+!.gitattributes
+!.github/
+!.gitlab-ci.yml
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Conda
+.conda/
+.mamba/
+conda-meta/
+pkgs/
+# common local env names
+.conda-env/
+.conda_env/
+.conda_envs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / artifacts
+build/
+dist/
+.eggs/
+.coverage
+htmlcov/
+*.log

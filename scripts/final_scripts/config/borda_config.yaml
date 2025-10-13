@@ -1,0 +1,35 @@
+borda:
+  # Choose columns, weight (any positive numbers; auto-renormalized),
+  # and direction: "lower_better" or "higher_better".
+  columns:
+    Median.MT.IC50.Score:
+      weight: 0.25
+      direction: lower_better
+    Depmap_survivability_score:
+      weight: 0.25
+      direction: lower_better
+    Network_Betweenness:
+      weight: 0.10
+      direction: higher_better
+    Network_Degree:
+      weight: 0.10
+      direction: higher_better
+    Network_Impact:
+      weight: 0.10
+      direction: higher_better
+    Network_Strength:
+      weight: 0.10
+      direction: higher_better
+    Network_WCI:
+      weight: 0.10
+      direction: higher_better
+
+  ties_method: average      # average|min|max|first|random
+
+  # NA handling policy for each feature:
+  # - ignore: rows with NA for a feature are excluded from that feature's ranking,
+  #           and the feature's weight is redistributed per-row by renormalizing
+  #           over the *available* features for that row (so no penalty).
+  # - worst:  NA gets 0 points for that feature (penalizes missing values).
+  # - drop:   drop rows that have NA in *any* selected feature (strict).
+  na_policy: ignore

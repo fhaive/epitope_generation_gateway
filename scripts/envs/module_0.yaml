@@ -1,0 +1,8 @@
+name: module_0
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastqc=0.11.9         # Specify the desired version of fastqc
+  - fastp=0.23.2          # Specify the desired version of fastp (this version includes --detect_adapter_for_PE)
+  - multiqc=1.12          # Specify the desired version of multiqc

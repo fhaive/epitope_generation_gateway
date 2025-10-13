@@ -1,0 +1,44 @@
+required_columns:
+  somatic:          # pVACseq
+    MHCI:
+      column1: "Gene Name"
+      column2: "HLA Allele"
+      column3: "Peptide Length"
+      column4: "MT Epitope Seq"
+      column5: "WT Epitope Seq"
+      column6: "Median MT IC50 Score"
+    MHCII:
+      column1: "Gene Name"
+      column2: "HLA Allele"
+      column3: "Peptide Length"
+      column4: "MT Epitope Seq"
+      column5: "WT Epitope Seq"
+      column6: "Median MT IC50 Score"
+
+  fusion:           # pVACfuse
+    MHCI:
+      column1: "Gene Name"           # e.g. "KMT2C_XRCC2"
+      column2: "HLA Allele"
+      column3: "Peptide Length"      
+      column4: "Epitope Seq"         # used as MT.Epitope.Seq
+      column5: "Median IC50 Score"   # written to Median.MT.IC50.Score
+    MHCII:
+      column1: "Gene Name"
+      column2: "HLA Allele"
+      column3: "Peptide Length"      # NEW: use if available
+      column4: "Epitope Seq"
+      column5: "Median IC50 Score"
+
+  splicing:         # pVACsplice
+    MHCI:
+      column1: "Gene Name"
+      column2: "HLA Allele"
+      column3: "Peptide Length"      # if missing, script computes nchar(Epitope Seq)
+      column4: "Epitope Seq"
+      column5: "Median IC50 Score"   # written to Median.MT.IC50.Score
+    MHCII:
+      column1: "Gene Name"
+      column2: "HLA Allele"
+      column3: "Peptide Length"
+      column4: "Epitope Seq"
+      column5: "Median IC50 Score"

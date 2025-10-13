@@ -1,0 +1,15 @@
+name: r_filtering
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.3.2
+  - r-igraph=1.5.1
+  - r-matrix=1.6_3
+  - r-dplyr=1.1.4
+  - r-tibble=3.2.1
+  - r-yaml=2.3.8
+  - r-stringr=1.5.1
+  - r-readr=2.1.5
+  - r-proxyc=0.5.2
+  - r-pheatmap=1.0.13

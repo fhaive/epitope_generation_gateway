@@ -1,0 +1,11 @@
+name: module_3_R
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.4
+  - r-tidyverse=2.0.0
+  - r-data.table=1.17.6
+  - r-purrr=1.0.2
+  - r-igraph=2.0.3
+  - bioconductor-deseq2=1.46.0

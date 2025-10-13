@@ -1,0 +1,7 @@
+name: module_2A_Picard
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - picard
+  - openjdk=17
