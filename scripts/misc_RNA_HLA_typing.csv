@@ -1,9 +1,0 @@
-sample_name,fastq_R1,fastq_R2,datatype,lane
-Sample_bN5-2,/nasdata/Omics/RNA_Seq_projects/Nittykoski_may_2023/bN5-2_1.fastq.gz,/nasdata/Omics/RNA_Seq_projects/Nittykoski_may_2023/bN5-2_2.fastq.gz,CancerRNA,LRNA
-Sample_bN9t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/bN9t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/bN9t_2.fastq.gz,CancerRNA,LRNA
-Sample_b019t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b019t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b019t_2.fastq.gz,CancerRNA,LRNA
-Sample_b042t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b042t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b042t_2.fastq.gz,CancerRNA,LRNA
-Sample_b034t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part1/b034t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part1/b034t_2.fastq.gz,CancerRNA,LRNA
-Sample_b032t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b032t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b032t_2.fastq.gz,CancerRNA,LRNA
-Sample_b023t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b023t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b023t_2.fastq.gz,CancerRNA,LRNA
-Sample_b041t,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b041t_1.fastq.gz,/nasdata/lmannino/Minna_20_12_2024/RNA_seq_part2/b041t_2.fastq.gz,CancerRNA,LRNA
