@@ -2,7 +2,6 @@
 
 A modular Snakemake pipeline for personalized neoantigen discovery and prioritization using patient-specific gene co-expression networks.
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Snakemake](https://img.shields.io/badge/snakemake-≥6.0-brightgreen.svg)](https://snakemake.readthedocs.io)
 
 ## Overview
@@ -393,14 +392,77 @@ resources/
 ├── gnomad/                  # gnomAD allele frequencies
 ├── arcasHLA/                # HLA reference sequences
 ├── agfusion/                # Gene fusion database
-└── WGS_intervals/           # Genomic intervals for parallelization
+├── WGS_intervals/           # Genomic intervals
+└── interval_list/           # WES genomic intervals
 ```
 
-These are downloaded once and cached locally for future runs.
+These are downloaded once and saved locally for future runs.
 
 ---
 
 ## Configuration
+All editable YAML configs are found under:
+Epitope_Generation_Gateway/scripts/final_scripts/config/
+
+### Adjusting QC Filtering
+
+Configure read-quality filtering (via fastp) by editing:
+# Relative path: Epitope_Generation_Gateway/scripts/final_scripts/config/QC_filtering_config_0.yaml
+fastp:
+  detect_adapter: true          # Auto-detect adapters; set to false to use custom sequences
+  custom_adapter_R1: ""         # Custom adapter for R1 (leave blank if auto-detecting)
+  custom_adapter_R2: ""         # Custom adapter for R2 (leave blank if auto-detecting)
+  min_length: 50                # Drop reads shorter than this after trimming
+  quality: 20                   # Minimum Phred quality for a base to be considered "qualified"
+  unqualified_base_limit: 30    # Max % of unqualified bases allowed per read
+  cut_front: false              # Trim low-quality bases from the 5' end if true
+  cut_tail: false               # Trim low-quality bases from the 3' end if true
+  cut_window_size: 4            # Sliding window size for quality-based trimming
+  cut_mean_quality: 20          # Mean quality threshold within the window to trigger trimming
+
+### Adjusting Prioritization Weights
+
+EGG uses a Borda consensus to combine feature-ranked scores. Edit the YAML to change which columns are used, their weights, and whether higher or lower values rank better:
+
+```yaml
+# config/borda_config.yaml
+borda:
+  # Choose columns, weight (any positive numbers; auto-renormalized),
+  # and direction: "lower_better" or "higher_better".
+  columns:
+    Median.MT.IC50.Score:
+      weight: 0.25
+      direction: lower_better
+    Depmap_survivability_score:
+      weight: 0.25
+      direction: lower_better
+    Network_Betweenness:
+      weight: 0.10
+      direction: higher_better
+    Network_Degree:
+      weight: 0.10
+      direction: higher_better
+    Network_Impact:
+      weight: 0.10
+      direction: higher_better
+    Network_Strength:
+      weight: 0.10
+      direction: higher_better
+    Network_WCI:
+      weight: 0.10
+      direction: higher_better
+
+  # How to break ties between equal ranks: average|min|max|first|random
+  ties_method: average
+
+  # NA handling policy:
+  # - ignore: exclude NA for that feature and renormalize weights per row (no penalty)
+  # - worst:  treat NA as worst rank (penalize missing values)
+  # - drop:   drop rows with any NA across selected features (strict)
+  na_policy: ignore
+
+---
+
 
 ### Adjusting pVACtools Parameters
 
@@ -413,30 +475,10 @@ pvacseq run \
     --minimum-fold-change 1
 ```
 
-### Adjusting Prioritization Weights
-
-Edit the Borda consensus configuration YAML:
-```yaml
-# config/prioritization_config.yaml
-feature_weights:
-  binding_affinity: 3
-  expression: 2
-  network_centrality: 2
-  essentiality: 1
-```
-
----
-
 ## Troubleshooting
 
 ### Common Issues
 
-**Issue**: Docker permission errors
-```bash
-# Solution: Add your user to the docker group
-sudo usermod -aG docker $USER
-# Then log out and back in
-```
 
 **Issue**: Reference download failures
 ```bash
@@ -447,7 +489,7 @@ sudo usermod -aG docker $USER
 **Issue**: Out of memory errors
 ```bash
 # Solution: Reduce parallel jobs or increase system RAM
-snakemake --cores 8 --resources mem_mb=32000
+snakemake --cores 1 --resources mem_mb=32000
 ```
 
 ---
@@ -457,22 +499,16 @@ snakemake --cores 8 --resources mem_mb=32000
 If you use EGG in your research, please cite:
 
 ```
-[Your Citation Here]
+[Citation]
 ```
 
----
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## Contact
 
 For questions, issues, or feature requests:
-- **GitHub Issues**: [github.com/yourusername/EGG/issues](github.com/yourusername/EGG/issues)
-- **Email**: your.email@institution.edu
+- **GitHub Issues**: [github.com/still/need/to/make/this](github.com///issues)
+- **Email**: 
 
 ---
 
@@ -484,5 +520,6 @@ EGG integrates and builds upon numerous open-source tools:
 - **STAR-Fusion** (Broad Institute)
 - **HumanNet-XN** (Seoul National University)
 - **LIONESS** (Glass Lab)
+- **DepMap** (Broad Institute)
 
 We thank the developers of these tools for making their software freely available.
