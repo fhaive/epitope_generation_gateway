@@ -82,15 +82,8 @@ SAMPLE_001,/path/to/R1.fastq.gz,/path/to/R2.fastq.gz,CancerDNA,L001
 SAMPLE_001,/path/to/R1.fastq.gz,/path/to/R2.fastq.gz,NormalDNA,L001
 ```
 
-### 2. Run the complete pipeline
 
-```bash
-# Run all modules sequentially
-snakemake --use-conda --cores 16 \
-    --config csvfile="samples.csv" results_dir="results/"
-```
-
-### 3. Or run individual modules
+### 2. Run each module separately with same result_dir name
 
 ```bash
 # Example: Run only mutation analysis
@@ -272,7 +265,7 @@ snakemake --use-conda --snakefile scripts/final_scripts/QC_filtering_module_0.sm
     --cores 16 --config csvfile="samples.csv" results_dir="results/"
 ```
 
-2. **Run Module 1A and 1B in parallel** (DNA and RNA analysis)
+2. **Run Module 1A and 1B in after Module 0** (DNA and RNA analysis)
 ```bash
 # Terminal 1: DNA analysis
 snakemake --use-conda --snakefile scripts/final_scripts/mutation_analysis_module_1A.smk \
