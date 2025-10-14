@@ -527,53 +527,28 @@ rule gatk_mutect2:
             -O {output.vcf}
         """
 
-#rule pile_up_summaries:
-#    input:
-#        bam=f"{MUTATION_ANALYSIS_DIR}/bqsr/{{sample}}_{{datatype}}_final_bqsr.bam",
-#        index=f"{MUTATION_ANALYSIS_DIR}/bqsr/{{sample}}_{{datatype}}_final_bqsr.bam.bai",
-#        interval_list="resources/interval_list/exome_calling_regions.v1.1.interval_list"
-#    output:
-#        table=f"{MUTATION_ANALYSIS_DIR}/filtering_tables/{{sample}}_{{datatype}}_pileups.table"
-#    conda:
-#        "../envs/module_1A.yaml"
-#    threads: available_cores
-#    shell:
-#        """
-#        gatk  GetPileupSummaries \
-#            --java-options "-Xmx64G" --tmp-dir {global_tmpdir} \
-#            -I {input.bam} \
-#            -V {germline_resource} \
-#            -L {input.interval_list} \
-#            -O {output.table}
-#
-#        """
-
-
 rule pile_up_summaries:
     input:
-        bam   = f"{MUTATION_ANALYSIS_DIR}/bqsr/{{sample}}_{{datatype}}_final_bqsr.bam",
-        index = f"{MUTATION_ANALYSIS_DIR}/bqsr/{{sample}}_{{datatype}}_final_bqsr.bam.bai"
+        bam=f"{MUTATION_ANALYSIS_DIR}/bqsr/{{sample}}_{{datatype}}_final_bqsr.bam",
+        index=f"{MUTATION_ANALYSIS_DIR}/bqsr/{{sample}}_{{datatype}}_final_bqsr.bam.bai",
+        interval_list="resources/interval_list/exome_calling_regions.v1.1.interval_list"
     output:
-        table = f"{MUTATION_ANALYSIS_DIR}/filtering_tables/{{sample}}_{{datatype}}_pileups.table"
-    params:
-        intervals = (
-            "" if config.get("mode", "all_intervals") == "all_intervals" else
-            f"-L {config['wgs_intervals']}" if config.get("mode") == "WGS" else
-            f"-L {config['bedfile']}" if (config.get("mode") == "WES" and "bedfile" in config) else
-            ""
-        )
+        table=f"{MUTATION_ANALYSIS_DIR}/filtering_tables/{{sample}}_{{datatype}}_pileups.table"
     conda:
         "../envs/module_1A.yaml"
     threads: available_cores
     shell:
-        r"""
-        gatk GetPileupSummaries \
-          --java-options "-Xmx64G" --tmp-dir {global_tmpdir} \
-          -I {input.bam} \
-          -V {germline_resource} \
-          {params.intervals} \
-          -O {output.table}
         """
+        gatk  GetPileupSummaries \
+            --java-options "-Xmx64G" --tmp-dir {global_tmpdir} \
+            -I {input.bam} \
+            -V {germline_resource} \
+            -L {input.interval_list} \
+            -O {output.table}
+
+        """
+
+
 
 
 rule gatk_contamination:
