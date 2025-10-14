@@ -332,7 +332,6 @@ The prioritization module produces a comprehensive ranked table containing:
 
 **Network features**:
 - `degree`: Number of co-expressed genes
-- `betweenness`: Centrality in co-expression network
 - `betweennes_centrality`: Network information flow score
 - `LCI`: Largest Component Impact (structural criticality)
 
