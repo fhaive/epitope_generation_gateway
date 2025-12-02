@@ -24,7 +24,7 @@ EGG is a comprehensive computational workflow for identifying and prioritizing t
 EGG goes beyond traditional binding affinity predictions by incorporating:
 - **Gene co-expression network topology** to identify functionally critical genes
 - **Protein-protein interaction** data (HumanNet-XN) to prioritize biologically relevant candidates
-- **Network centrality metrics** that capture a gene's importance to tumor cell function
+- **Network centrality metrics** that capture a gene's importance to tumor cell function in particular related to resistance to cancer evolution and immune evasion
 - **Consensus scoring** that integrates network features with orthogonal evidence (DepMap essentiality, binding affinity, expression)
 
 ---
@@ -55,8 +55,8 @@ EGG goes beyond traditional binding affinity predictions by incorporating:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/EGG.git
-cd EGG
+git clone https://gitlab.com/grecolab_group/epitope_generation_gateway
+cd epitope_generation_gateway
 ```
 
 2. **Install Snakemake** (if not already installed)
@@ -322,7 +322,7 @@ The prioritization module produces a comprehensive ranked table containing:
 - `gene`: Gene harboring the alteration
 - `variant_class`: SNV / indel / fusion / splice
 - `peptide`: Amino acid sequence of the epitope
-- `peptide_length`: Length of the peptide (typically 8-11 amino acids)
+- `peptide_length`: Length of the epitope peptide
 - `HLA_allele`: Predicted binding HLA allele
 
 **Immunogenicity features**:
@@ -399,18 +399,30 @@ Epitope_Generation_Gateway/scripts/final_scripts/config/
 ### Adjusting QC Filtering
 
 Configure read-quality filtering (via fastp) by editing:
+
 # Relative path: Epitope_Generation_Gateway/scripts/final_scripts/config/QC_filtering_config_0.yaml
+
 fastp:
   detect_adapter: true          # Auto-detect adapters; set to false to use custom sequences
+
   custom_adapter_R1: ""         # Custom adapter for R1 (leave blank if auto-detecting)
+
   custom_adapter_R2: ""         # Custom adapter for R2 (leave blank if auto-detecting)
+
   min_length: 50                # Drop reads shorter than this after trimming
+
   quality: 20                   # Minimum Phred quality for a base to be considered "qualified"
+
   unqualified_base_limit: 30    # Max % of unqualified bases allowed per read
+
   cut_front: false              # Trim low-quality bases from the 5' end if true
+
   cut_tail: false               # Trim low-quality bases from the 3' end if true
+
   cut_window_size: 4            # Sliding window size for quality-based trimming
+  
   cut_mean_quality: 20          # Mean quality threshold within the window to trigger trimming
+
 
 ### Adjusting Prioritization Weights
 
@@ -499,8 +511,7 @@ If you use EGG in your research, please cite:
 ## Contact
 
 For questions, issues, or feature requests:
-- **GitHub Issues**: [github.com/still/need/to/make/this](github.com///issues)
-- **Email**: 
+- **GitHub Issues**: [https://gitlab.com/grecolab_group/epitope_generation_gateway/-/issues](github.com///issues)
 
 ---
 
