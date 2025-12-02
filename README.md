@@ -34,6 +34,7 @@ EGG goes beyond traditional binding affinity predictions by incorporating:
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Pipeline Modules](#pipeline-modules)
+- [Output Organization](#output-organisation)
 - [Input Requirements](#input-requirements)
 - [Execution Guide](#execution-guide)
 - [Output](#output)
@@ -232,7 +233,56 @@ snakemake --use-conda --snakefile scripts/final_scripts/epitopes_prioritisation.
 ```
 
 ---
+## Output Organization
 
+The pipeline generates outputs organized by module:
+
+```
+results/
+├── 0_Filtering_and_QC/
+│   ├── trimmed_fastq/              # Quality-filtered FASTQ files
+│   ├── qc_pre_filtering/           # Initial FastQC reports
+│   └── qc_post_filtering/          # Post-trimming QC reports
+│
+├── 1A_mutation_analysis/
+│   ├── VCF/                        # Raw somatic variant calls
+│   ├── VCF_filtered/               # Filtered somatic variants
+│   ├── VCF_germline/               # Germline variant calls
+│   └── bqsr/                       # BQSR-processed BAMs
+│
+├── 1B_RNA_fusion_HLA/
+│   ├── RNA_Counts/                 # Gene expression quantification
+│   ├── StarFusionOut/              # Gene fusion predictions
+│   └── ArcasHLA/                   # HLA typing results
+│
+├── 2A_somatic_mutation_epitopes/
+│   ├── pvacSeq/                    # SNV/indel neoepitope predictions
+│   ├── annotated_somatic_VCF/      # VEP-annotated variants
+│   └── kallisto_quantification/    # Expression data for variants
+│
+├── 2B_fusion_epitopes/
+│   ├── pvacFuse/                   # Fusion neoepitope predictions
+│   └── AGfusion/                   # Fusion annotations
+│
+├── 2C_splicing_epitopes/
+│   ├── pvacSplice/                 # Splicing neoepitope predictions
+│   └── regtools_genomic_VCF_genecode/  # Splice junction calls
+│
+├── sample_specific_networks/
+│   ├── Sample_Specific_Networks_PPI_filtered/  # Patient-specific filtered networks
+│   ├── Network_Metrics_Degree/                 # Degree centrality per gene
+│   ├── Network_Metrics_Betweenness/            # Betweenness centrality per gene
+│   ├── Network_Metrics_LargestComponentImpact/ # LCI scores per gene
+│   └── normalised_counts/                      # Normalized expression for network construction
+│
+└── epitopes_prioritisation/
+    ├── final_epitopes/             # Final ranked neoepitope table
+    ├── Borda_Epiotpes_Prioritisation/  # Consensus scoring results
+    ├── annotated_epitopes_with_network/  # Epitopes merged with network features
+    └── combined_epitopes/          # Merged epitopes from all sources
+```
+
+---
 ## Input Requirements
 
 ### Sample Metadata CSV
