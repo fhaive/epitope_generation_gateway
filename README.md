@@ -399,7 +399,7 @@ Epitope_Generation_Gateway/scripts/final_scripts/config/
 ### Adjusting QC Filtering
 
 Configure read-quality filtering (via fastp) by editing:
-
+```
 # Relative path: Epitope_Generation_Gateway/scripts/final_scripts/config/QC_filtering_config_0.yaml
 
 fastp:
@@ -423,7 +423,7 @@ fastp:
   
   cut_mean_quality: 20          # Mean quality threshold within the window to trigger trimming
 
-
+```
 ### Adjusting Prioritization Weights
 
 EGG uses a Borda consensus to combine feature-ranked scores. Edit the YAML to change which columns are used, their weights, and whether higher or lower values rank better:
