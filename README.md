@@ -404,25 +404,15 @@ Configure read-quality filtering (via fastp) by editing:
 
 fastp:
   detect_adapter: true          # Auto-detect adapters; set to false to use custom sequences
-
   custom_adapter_R1: ""         # Custom adapter for R1 (leave blank if auto-detecting)
-
   custom_adapter_R2: ""         # Custom adapter for R2 (leave blank if auto-detecting)
-
   min_length: 50                # Drop reads shorter than this after trimming
-
   quality: 20                   # Minimum Phred quality for a base to be considered "qualified"
-
   unqualified_base_limit: 30    # Max % of unqualified bases allowed per read
-
   cut_front: false              # Trim low-quality bases from the 5' end if true
-
   cut_tail: false               # Trim low-quality bases from the 3' end if true
-
   cut_window_size: 4            # Sliding window size for quality-based trimming
-  
   cut_mean_quality: 20          # Mean quality threshold within the window to trigger trimming
-
 ```
 ### Adjusting Prioritization Weights
 
