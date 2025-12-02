@@ -1,4 +1,4 @@
-# EGG: Epitope Generation through Gene-networks
+# EGG: Epitope Generation Gateway
 
 A modular Snakemake pipeline for personalized neoantigen discovery and prioritization using patient-specific gene co-expression networks.
 
