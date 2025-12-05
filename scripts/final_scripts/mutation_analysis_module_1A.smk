@@ -44,16 +44,6 @@ for (sample, datatype, lane), v in sample_dict.items():
 
 sample_dict = filtered_sample_dict
 
-# Create a dictionary for sample inputs
-#sample_dict = {
-#    (row['sample_name'], row['datatype'], row['lane']): {
-#        'fastq_R1': f"{RESULTS_DIR}/0_Filtering_and_QC/trimmed_fastq/{row['sample_name']}_{row['datatype']}_{row['lane']}_trimmed_R1.fastq.gz",
-#        'fastq_R2': f"{RESULTS_DIR}/0_Filtering_and_QC/trimmed_fastq/{row['sample_name']}_{row['datatype']}_{row['lane']}_trimmed_R2.fastq.gz"
-#    }
-#    for idx, row in sample_df.iterrows()
-#    if os.path.exists(f"{RESULTS_DIR}/0_Filtering_and_QC/trimmed_fastq/{row['sample_name']}_{row['datatype']}_{row['lane']}_trimmed_R1.fastq.gz")
-#    and os.path.exists(f"{RESULTS_DIR}/0_Filtering_and_QC/trimmed_fastq/{row['sample_name']}_{row['datatype']}_{row['lane']}_trimmed_R2.fastq.gz")
-#}
 
 # Reference genome and resources
 ref_genome = "resources/genome_DNA/hg38.fa"
@@ -84,7 +74,6 @@ def generate_all_outputs():
     # Add sample-specific outputs
     for (sample, datatype, lane) in sample_dict.keys():
         outputs.append(f"{MUTATION_ANALYSIS_DIR}/bwa/{sample}_{datatype}_{lane}_bwa_done.txt")
-#        outputs.append(f"{MUTATION_ANALYSIS_DIR}/bam/{sample}_{datatype}_{lane}.bam")
         outputs.append(f"{MUTATION_ANALYSIS_DIR}/merge/{sample}_{datatype}_merged.bam")
         outputs.append(f"{MUTATION_ANALYSIS_DIR}/dedup/{sample}_{datatype}_dedup.bam") 
         outputs.append(f"{MUTATION_ANALYSIS_DIR}/dedup/{sample}_{datatype}_recal_data.table")
