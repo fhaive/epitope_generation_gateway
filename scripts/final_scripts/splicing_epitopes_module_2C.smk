@@ -86,17 +86,10 @@ sample_dict = {
 def generate_all_outputs():
     outputs = []
     outputs.append(f"resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_annot.gtf.gz.tbi")
-#    outputs.append("resources/updated_gtf/ref_annot_updated.gtf")
     for (sample, datatype, lane) in sample_dict.keys():
         if datatype == "CancerRNA":  # Only include outputs for CancerRNA
-#            outputs.append(f"{SPLICING_EPITOPES_DIR}/hisat2/{sample}_CancerRNA_{lane}_sorted.bam")
-#            outputs.append(f"{SPLICING_EPITOPES_DIR}/annotated_somatic_VCF_ensembl/{sample}_somatic_VEP.vcf")
-#            outputs.append(f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_ensembl/{sample}_splice_effects.tsv")
-#            outputs.append(f"{SPLICING_EPITOPES_DIR}/regtools/{sample}_splice_effects.tsv")
             outputs.append(f"{SPLICING_EPITOPES_DIR}/annotated_somatic_VCF/{sample}_somatic_VEP.vcf")
-#            outputs.append(f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF/{sample}_splice_effects.tsv")
             outputs.append(f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_genecode/{sample}_splice_effects.tsv")
-#            outputs.append(f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF/tvariant_{sample}_splice_effects.tsv")
             outputs.append(f"{SPLICING_EPITOPES_DIR}/pvacSplice/{sample}/")
     return outputs
 
@@ -110,138 +103,6 @@ def get_lanes(sample):
     return RNA_sample_df[sample_df['sample_name'] == sample]['lane'].tolist()
 
 
-
-#rule convert_gtf:
-#    input:
-#        "resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_annot.gtf"
-#    output:
-#        "resources/updated_gtf/ref_annot_updated.gtf"
-#    conda:
-#        conda_env
-#    shell:
-#        """
-#        python scripts/final_scripts/convert_gtf.py -i {input} -o {output}
-#        """
-
-
-
-
-
-#rule download_ensembl_reference_files:
-#    output:
-#        fasta="resources/FASTA/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
-#    shell:
-#        """
-#        mkdir -p resources/FASTA
-
-#        wget -O resources/FASTA/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz \
-#            ftp://ftp.ensembl.org/pub/release-103/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
-
-#        gunzip -c resources/FASTA/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz > {output.fasta}
-#        """
-
-#rule extract_splice_sites_exons:
-#    input:
-#        gtf="resources/GTF/Homo_sapiens.GRCh38.103.gtf"
-#    output:
-#        splice_sites="resources/GTF/ensembl.splice_sites.txt",
-#        exons="resources/GTF/ensembl.exons.txt"
-#    conda:
-#        conda_env  # should include hisat2
-#    shell:
-#        """
-#        hisat2_extract_splice_sites.py {input.gtf} > {output.splice_sites}
-#        hisat2_extract_exons.py {input.gtf} > {output.exons}
-#        """
-
-
-
-#rule build_hisat2_index:
-#    input:
-#        fasta="resources/FASTA/Homo_sapiens.GRCh38.dna.primary_assembly.fa",
-#        splice_sites="resources/GTF/ensembl.splice_sites.txt",
-#        exons="resources/GTF/ensembl.exons.txt"
-#    output:
-#        index=expand("resources/HISAT2_index/ensembl_GRCh38.{i}.ht2", i=range(1, 9))
-#    params:
-#        prefix="resources/HISAT2_index/ensembl_GRCh38"
-#    threads: 20
-#    conda:
-#        conda_env  # should include hisat2
-#    shell:
-#        """
-#        mkdir -p resources/HISAT2_index
-#        hisat2-build -p {threads} \
-#            --ss {input.splice_sites} \
-#            --exon {input.exons} \
-#            {input.fasta} {params.prefix}
-#        """
-
-#rule hisat2_align_ensembl:
-#    input:
-#        r1 = lambda wc: f"{RESULTS_DIR}/0_Filtering_and_QC/trimmed_fastq/{wc.sample}_CancerRNA_{wc.lane}_trimmed_R1.fastq.gz",
-#        r2 = lambda wc: f"{RESULTS_DIR}/0_Filtering_and_QC/trimmed_fastq/{wc.sample}_CancerRNA_{wc.lane}_trimmed_R2.fastq.gz",
-#        index = expand("resources/HISAT2_index/ensembl_GRCh38.{i}.ht2", i=range(1, 9)),
-#        splice_sites = "resources/GTF/ensembl.splice_sites.txt"
-#    output:
-#        bam = f"{SPLICING_EPITOPES_DIR}/hisat2/{{sample}}_CancerRNA_{{lane}}_sorted.bam"
-#    threads: 20
-#    conda:
-#        conda_env  # should include hisat2 + samtools
-#    shell:
-#        """
-#        mkdir -p {RNA_ANALYSIS_DIR}/hisat2
-#        hisat2 -x resources/HISAT2_index/ensembl_GRCh38 \
-#               --known-splicesite-infile {input.splice_sites} \
-#               --rna-strandness RF \
-#               -p {threads} \
-#               -1 {input.r1} -2 {input.r2} | \
-#        samtools sort -@ {threads} -o {output.bam}
-#        """
-
-#rule regtools_splice_effects:
-#    input:
-#        vcf=f"{ALT_SPLICING_DIR}/VCF/{{sample}}_CancerRNA_altsplicing.vcf.gz",
-#        bam=lambda wildcards: expand(
-#            f"{RNA_ANALYSIS_DIR}/sorted_bam/{{sample}}_CancerRNA_{{lane}}_sorted.bam",
-#            sample=wildcards.sample,
-#            lane=get_lanes(wildcards.sample)
-#        ),
-#        ref="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_genome.fa",
-#        gtf="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_annot.gtf"
-#    output:
-#        tsv=f"{SPLICING_EPITOPES_DIR}/regtools/{{sample}}_splice_effects.tsv"
-#    conda:
-#        conda_env
-#    shell:
-#        """
-#        mkdir -p {SOMATIC_EPITOPES_DIR}/regtools
-
-#        regtools cis-splice-effects identify \
-#            -o {output.tsv} \
-#            -s XS \
-#            {input.vcf} \
-#            {input.bam} \
-#            {input.ref} \
-#            {input.gtf}
-#        """
-
-
-#rule index_gtf_for_vep:
-#    input:
-#        gtf = "resources/updated_gtf/ref_annot_updated.gtf"
-#    output:
-#        gtf_gz = "resources/updated_gtf/ref_annot_updated.gtf.gz",
-#        gtf_tbi = "resources/updated_gtf/ref_annot_updated.gtf.gz.tbi"
-#    conda:
-#        conda_env_VEP  # or use your main env if htslib/tabix is already there
-#    shell:
-#        """
-#        sort -k1,1 -k4,4n {input.gtf} > sorted.gtf
-#        bgzip -c sorted.gtf > {output.gtf_gz}
-#        tabix -p gff {output.gtf_gz}
-#        rm sorted.gtf
-#        """
 
 rule bgzip_and_tabix_gtf:
     input:
@@ -293,80 +154,6 @@ rule somatic_vep_BAM_matching_fasta:
           --transcript_version \
           --pick
          """
-#          --offline \
-#         --dir_cache {params.cache_dir} \
-
-#rule somatic_vep_BAM_matching_fasta_ensembl:
-#    input:
-#        vcf=f"{MUTATION_ANALYSIS_DIR}/VCF_filtered/{{sample}}_somatic_filtered.vcf.gz",
-#        fasta="resources/genome_DNA/hg38.fa"
-#        fasta="resources/FASTA/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
-        #gtf="resources/updated_gtf/ref_annot_updated.gtf.gz"
-#    output:
-#        vep_output=f"{SPLICING_EPITOPES_DIR}/annotated_somatic_VCF_ensembl/{{sample}}_somatic_VEP.vcf"
-#    params:
-#        cache_dir="resources/VEP",  # Directory for the VEP cache inside the Docker container
-#        plugins_dir="resources/VEP/VEP_plugins"  # Directory for VEP plugins inside the Docker container
-#    conda:
-#        conda_env_VEP
-#    shell:
-#        """
-#        mkdir -p {SPLICING_EPITOPES_DIR}/annotated_somatic_VCF
-#        vep \
-#          --input_file {input.vcf} \
-#          --output_file {output.vep_output} \
-#          --format vcf \
-#          --vcf \
-#          --symbol \
-#          --terms SO \
-#          --tsl \
-#          --biotype \
-#          --hgvs \
-#          --fasta {input.fasta} \
-#          --offline \
-#          --dir_cache {params.cache_dir} \
-#          --no_stats \
-#          --transcript_version \
-#          --pick
- #        """
-
-
-
-
-
-#rule regtools_splice_effects_genomic_VCF_ensembl:
-#    input:
-#        vcf=f"{SPLICING_EPITOPES_DIR}/annotated_somatic_VCF_ensembl/{{sample}}_somatic_VEP.vcf",
-#        bam=lambda wildcards: expand(
-#            f"{SPLICING_EPITOPES_DIR}/hisat2/{{sample}}_CancerRNA_{{lane}}_sorted.bam",
-#            sample=wildcards.sample,
-#            lane=get_lanes(wildcards.sample)
-#        ),
-#        ref="resources/genome_DNA/hg38.fa",
-#        ref="resources/FASTA/Homo_sapiens.GRCh38.dna.primary_assembly.fa",
-#        gtf="resources/GTF/Homo_sapiens.GRCh38.103.gtf"
-#    output:
-#        tsv=f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_ensembl/{{sample}}_splice_effects.tsv",
-#        vcf=f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_ensembl/{{sample}}_splice_effects.vcf"
-#    conda:
-#        conda_env
-#    shell:
-#        """
-#        mkdir -p {SOMATIC_EPITOPES_DIR}/regtools
-#        echo "Running: regtools cis-splice-effects identify -o {output.tsv} -s RF -w 100 -E -I {input.vcf} {input.bam} {input.ref} {input.gtf}"
-
-#        regtools cis-splice-effects identify \
-#            -o {output.tsv} \
-#            -v {output.vcf} \
-#            -s RF \
-#            -I \
-#            -E \
-#            -w 100 \
-#            {input.vcf} \
-#            {input.bam} \
-#            {input.ref} \
-#            {input.gtf}
-#        """
 
 
 
@@ -413,22 +200,6 @@ rule regtools_splice_effects_genomic_VCF_genecode:
             {input.ref} \
             {input.gtf}
         """
-#           -I \
-#            -E \
-
-
-#rule add_transcript_version_column:
-#    input:
-#        tsv = f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF/{{sample}}_splice_effects.tsv"
-#    output:
-#        patched_tsv = f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF/tvariant_{{sample}}_splice_effects.tsv"
-#    shell:
-#        r"""
-#        awk 'BEGIN{{FS=OFS="\t"}} \
-#            NR==1{{$(NF+1)="transcript_version"}} \
-#            NR>1{{split($(NF-1),a,","); split(a[1],b,"."); $(NF+1)=b[2]}}1' \
-#            {input.tsv} > {output.patched_tsv}
-#        """
 
 
 
@@ -474,17 +245,14 @@ if not hla_column_exists:
 if not hla_column_exists:
     rule PvacSplice_HLA:
         input:
-            #main_vcf=f"{ALT_SPLICING_DIR}/VCF/{{sample}}_CancerRNA_altsplicing.vcf.gz",
             main_vcf=f"{SPLICING_EPITOPES_DIR}/annotated_somatic_VCF/{{sample}}_somatic_VEP.vcf.gz",
             hla_types=lambda wildcards: expand(
             f"{HLA_ANALYSIS_DIR}/ArcasHLA/{{sample}}_CancerRNA_{{lane}}_HLAs_pvacFormat.txt",
             sample=wildcards.sample,
             lane=get_lanes(wildcards.sample)
         ),
-            #regtools_tsv=f"{SPLICING_EPITOPES_DIR}/regtools/{{sample}}_splice_effects.tsv",
             regtools_tsv=f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_genecode/{{sample}}_splice_effects.tsv",
             ref="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_genome.fa",
-#            gtf="resources/updated_gtf/ref_annot_updated.gtf"
             gtf="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_annot.gtf.gz"
         output:
             directory(f"{SPLICING_EPITOPES_DIR}/pvacSplice/{{sample}}/")
