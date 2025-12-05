@@ -17,7 +17,7 @@ required_columns:
 
   fusion:           # pVACfuse
     MHCI:
-      column1: "Gene Name"           # e.g. "KMT2C_XRCC2"
+      column1: "Gene Name"
       column2: "HLA Allele"
       column3: "Peptide Length"      
       column4: "Epitope Seq"         # used as MT.Epitope.Seq
@@ -25,7 +25,7 @@ required_columns:
     MHCII:
       column1: "Gene Name"
       column2: "HLA Allele"
-      column3: "Peptide Length"      # NEW: use if available
+      column3: "Peptide Length"
       column4: "Epitope Seq"
       column5: "Median IC50 Score"
 
