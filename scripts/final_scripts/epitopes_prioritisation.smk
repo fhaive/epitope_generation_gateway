@@ -1,5 +1,3 @@
-# scripts/final_scripts/epitopes_prioritisation.smk
-
 import os
 import pandas as pd
 from glob import glob
