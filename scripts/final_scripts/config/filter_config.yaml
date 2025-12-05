@@ -1,2 +1,13 @@
-top_prop: 0.20
-mem_prop: 0.95
+top_prop: 0.20 
+mem_prop: 0.95 #used in the script as 1-0.95
+
+#explanation of mem_prop from methid section:
+    #Specifically, we first applied the PPI filtering described above, which yielded N edges.
+    #We then calculated 5% of N to determine the target number of additional edges to include.
+    #From the full gene co-expression network, we selected the top-ranked edges (by absolute correlation weight)
+    #where at least one gene was annotated as membrane associated, up to this 5% threshold. 
+
+
+#explanation for top_prop from methods:
+    #For each gene, we retained edges with absolute correlation weights 
+    #ranking in the top 20% among all edges connecting that gene to its PPI-linked neighbors.
