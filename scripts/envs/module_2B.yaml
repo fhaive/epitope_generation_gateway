@@ -8,7 +8,7 @@ dependencies:
   - jq
   - pip                # ensure pip is installed in the environment
   - pip:
-      - agfusion       # install agfusion with pip
+      - agfusion=1.4.3     # install agfusion with pip
 #  - compilers
 #  - conda-build                  # needed for some environments where pyensembl downloads require compilation tools
 #  - post-build:
