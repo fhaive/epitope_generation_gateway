@@ -16,4 +16,4 @@ dependencies:
   - bcftools
   - pip                # ensure pip is installed in the environment
   - pip:
-      - vatools
+      - vatools=5.2.0
