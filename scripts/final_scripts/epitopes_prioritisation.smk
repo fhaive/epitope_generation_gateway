@@ -44,7 +44,7 @@ TMPDIR = config.get("tmpdir", "/tmp")
 os.environ["TMPDIR"] = TMPDIR
 global_tmpdir = TMPDIR
 
-# make dirs you need
+# make dirs needed
 os.makedirs(SOMATIC_EPITOPES_DIR, exist_ok=True)
 os.makedirs(PRIORITISATION_DIR, exist_ok=True)
 os.makedirs(COMBINED_EPITOPES_DIR, exist_ok=True)
@@ -68,7 +68,7 @@ DEPMAP_FIGSHARE_ID     = str(config.get("depmap_figshare_article_id", "27993248"
 CRISPR_GENE_EFFECT = f"{PRIORITISATION_DIR}/CRISPRGeneEffect.csv"
 PAN_GENE_SCORES    = f"{PRIORITISATION_DIR}/depmap_pan_cancer_gene_score.csv"
 
-# optional: path to Hallmark GMT (MSigDB H collection or your own)
+# path to Hallmark GMT 
 HALLMARK_GMT = config.get("hallmark_gmt", "")
 
 # ---------- intogen config/paths ----------
@@ -84,7 +84,7 @@ ENSDB_V103_SENTINEL   = f"{ANNOTATIONHUB_CACHE}/EnsDb.Hsapiens.v103.ready"
 # ---------- config-driven columns for epitopes ----------
 EPITOPE_COLUMNS_YAML = config.get("epitope_columns_config", "scripts/final_scripts/config/epitope_columns.yaml")
 
-# ---------- helper: candidate path patterns (use * for lane in pvacFuse) ----------
+# ---------- helper: candidate path patterns  ----------
 from glob import glob
 
 
@@ -260,7 +260,7 @@ rule intogen_cancer_driver_genes_table:
         """
 
 # ---------- rule: merge epitopes using IC50 (per sample) ----------
-# Point to your moved R script
+# Point to R script
 MERGE_EPITOPES_R = "scripts/final_scripts/R_scripts/merge_epitopes_ic50.R"
 rule merge_epitopes_ic50:
     input:
