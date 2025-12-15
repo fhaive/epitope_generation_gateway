@@ -3,5 +3,5 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - ensembl-vep=114
+  - ensembl-vep=103
   - htslib
