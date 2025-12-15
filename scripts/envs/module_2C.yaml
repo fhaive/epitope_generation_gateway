@@ -3,7 +3,7 @@ channels:
   - bioconda
   - conda-forge
 dependencies:
-  - regtools
+  - regtools=1.0.0
   - samtools
   - hisat2
   - python=3.8  # or whatever version you're using
