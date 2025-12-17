@@ -182,7 +182,6 @@ rule regtools_splice_effects_genomic_VCF_genecode:
             lane=get_lanes(wildcards.sample)
         ),
         ref="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_genome.fa",
- #       gtf="resources/updated_gtf/ref_annot_updated.gtf"
         gtf="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_annot.gtf"
     output:
         tsv=f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_genecode/{{sample}}_splice_effects.tsv"
