@@ -579,13 +579,6 @@ If you use EGG in your research, please cite:
 
 
 
-## Contact
-
-For questions, issues, or feature requests:
-- **GitHub Issues**: [https://gitlab.com/grecolab_group/epitope_generation_gateway/-/issues](github.com///issues)
-
----
-
 ## Acknowledgments
 
 EGG integrates and builds upon numerous open-source tools:
