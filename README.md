@@ -332,7 +332,7 @@ results/
 │   ├── bwa/                                # Alignment outputs
 │   ├── dedup/                              # Duplicate-marked BAMs/metrics
 │   ├── bqsr/                               # BQSR-processed BAMs
-│   ├── merge/                              # Merge steps/results
+│   ├── merge/                              # Merge fastqs from same sample run across different lanes 
 │   ├── metrics/                            # Alignment/QC metrics
 │   └── filtering_tables/                   # Variant filtering tables/logs
 │
@@ -383,7 +383,6 @@ results/
 │   ├── Sample_Specific_Networks_PPI_filtered_copy/
 │   │   └── filtered_networks_matrix/
 │   ├── gene_lists/                         # Gene sets used for networks
-│   ├── gene_lists_old/                     # Legacy gene lists
 │   └── normalised_counts/                  # Normalized expression for network construction
 │
 └── epitopes_prioritisation/
