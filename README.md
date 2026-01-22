@@ -320,46 +320,83 @@ The pipeline generates outputs organized by module:
 ```
 results/
 ├── 0_Filtering_and_QC/
-│   ├── trimmed_fastq/              # Quality-filtered FASTQ files
-│   ├── qc_pre_filtering/           # Initial FastQC reports
-│   └── qc_post_filtering/          # Post-trimming QC reports
+│   ├── trimmed_fastq/                      # Quality-filtered FASTQ files
+│   ├── qc_pre_filtering/                   # Initial FastQC reports
+│   └── qc_post_filtering/                  # Post-trimming QC reports
 │
 ├── 1A_mutation_analysis/
-│   ├── VCF/                        # Raw somatic variant calls
-│   ├── VCF_filtered/               # Filtered somatic variants
-│   ├── VCF_germline/               # Germline variant calls
-│   └── bqsr/                       # BQSR-processed BAMs
+│   ├── VCF/                                # Raw variant calls
+│   ├── VCF_filtered/                       # Filtered somatic variants
+│   ├── VCF_germline/                       # Germline variant calls
+│   ├── VCF_germline_filtered/              # Filtered germline variants
+│   ├── bwa/                                # Alignment outputs
+│   ├── dedup/                              # Duplicate-marked BAMs/metrics
+│   ├── bqsr/                               # BQSR-processed BAMs
+│   ├── merge/                              # Merge steps/results
+│   ├── metrics/                            # Alignment/QC metrics
+│   └── filtering_tables/                   # Variant filtering tables/logs
 │
 ├── 1B_RNA_fusion_HLA/
-│   ├── RNA_Counts/                 # Gene expression quantification
-│   ├── StarFusionOut/              # Gene fusion predictions
-│   └── ArcasHLA/                   # HLA typing results
+│   ├── ArcasHLA/                           # HLA typing results
+│   ├── RNA_Counts/                         # Gene expression quantification
+│   ├── StarFusionOut/                      # Fusion predictions
+│   └── sorted_bam/                         # Coordinate-sorted RNA BAMs
 │
 ├── 2A_somatic_mutation_epitopes/
-│   ├── pvacSeq/                    # SNV/indel neoepitope predictions
-│   ├── annotated_somatic_VCF/      # VEP-annotated variants
-│   └── kallisto_quantification/    # Expression data for variants
+│   ├── annotated_germline_VCF/             # Annotated germline variants
+│   ├── annotated_germline_VCF_name_updated/# Germline VCFs with updated naming
+│   ├── annotated_phased_VCF/               # Annotated phased variants
+│   ├── annotated_somatic_VCF/              # Annotated somatic variants
+│   ├── combined_VCF/                       # Combined VCFs (somatic/germline/etc.)
+│   ├── kallisto_quantification/            # Expression quantification (kallisto)
+│   ├── kallisto_somatic_VCF/               # Somatic VCFs used alongside expression
+│   ├── phased_VCF/                         # Phased VCFs
+│   ├── pvacSeq/                            # Neoepitope predictions
+│   ├── regtools/                           # regtools outputs for splicing evidence
+│   ├── sorted_VCF/                         # Sorted VCFs
+│   └── tumor_only_VCF/                     # Tumor-only variant calls
 │
 ├── 2B_fusion_epitopes/
-│   ├── pvacFuse/                   # Fusion neoepitope predictions
-│   └── AGfusion/                   # Fusion annotations
+│   ├── AGfusion/                           # Fusion annotations
+│   └── pvacFuse/                           # Fusion neoepitope predictions
 │
 ├── 2C_splicing_epitopes/
-│   ├── pvacSplice/                 # Splicing neoepitope predictions
-│   └── regtools_genomic_VCF_genecode/  # Splice junction calls
+│   ├── annotated_somatic_VCF/              # Annotated somatic VCFs (splicing context)
+│   ├── pvacSplice/                         # Splicing neoepitope predictions
+│   └── regtools_genomic_VCF_genecode/      # Splice junction calls
 │
 ├── sample_specific_networks/
-│   ├── Sample_Specific_Networks_PPI_filtered/  # Patient-specific filtered networks
-│   ├── Network_Metrics_Degree/                 # Degree centrality per gene
-│   ├── Network_Metrics_Betweenness/            # Betweenness centrality per gene
+│   ├── Network_Metrics_Betweenness/        # Betweenness centrality per gene
+│   ├── Network_Metrics_Degree/             # Degree centrality per gene
+│   ├── Network_Metrics_Full/               # Full metrics outputs
+│   │   ├── Strength/                       # Strength metrics
+│   │   └── WCI/                            # WCI metrics
 │   ├── Network_Metrics_LargestComponentImpact/ # LCI scores per gene
-│   └── normalised_counts/                      # Normalized expression for network construction
+│   ├── Network_Metrics_Strength/           # Strength centrality per gene
+│   ├── Sample_Specific_Networks/           # Patient-specific networks
+│   ├── Sample_Specific_Networks_Distances/ # Network distance computations
+│   ├── Sample_Specific_Networks_PPI_filtered/
+│   │   ├── filtered_networks_matrix/
+│   │   ├── filtered_networks_rds/
+│   │   ├── filtered_networks_rds_old/
+│   │   └── qc_plots/
+│   ├── Sample_Specific_Networks_PPI_filtered_copy/
+│   │   └── filtered_networks_matrix/
+│   ├── gene_lists/                         # Gene sets used for networks
+│   ├── gene_lists_old/                     # Legacy gene lists
+│   └── normalised_counts/                  # Normalized expression for network construction
 │
 └── epitopes_prioritisation/
-    ├── final_epitopes/             # Final ranked neoepitope table
-    ├── Borda_Epiotpes_Prioritisation/  # Consensus scoring results
-    ├── annotated_epitopes_with_network/  # Epitopes merged with network features
-    └── combined_epitopes/          # Merged epitopes from all sources
+    ├── Borda_Epiotpes_Prioritisation/      # Consensus scoring results
+    ├── annotated_epitopes/                 # Annotated epitopes
+    ├── annotated_epitopes_with_network/    # Epitopes merged with network features
+    ├── annotationhub_cache/                # AnnotationHub cache
+    ├── combined_epitopes/                  # Merged epitopes from all sources
+    └── final_epitopes/                     # Final ranked neoepitope outputs
+        ├── HLA/
+        ├── HTML/
+        └── html_out/
+
 ```
 
 ### Final Prioritized Neoepitope Table
@@ -528,12 +565,8 @@ pvacseq run \
 # Solution: Manually download and place in resources/ directory
 # Check logs for the specific URL that failed
 ```
+This troubleshooting secion will be updated as issues appear
 
-**Issue**: Out of memory errors
-```bash
-# Solution: Reduce parallel jobs or increase system RAM
-snakemake --cores 1 --resources mem_mb=32000
-```
 
 ---
 
