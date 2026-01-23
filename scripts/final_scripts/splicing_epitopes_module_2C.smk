@@ -282,37 +282,40 @@ MHCnuggetsI MHCnuggetsII \
 "
         """
 
-
 if hla_column_exists:
     rule PvacSplice_UserHLA:
         input:
-            star_fusion_tsv=f"{HLA_ANALYSIS_DIR}/StarFusionOut/{{sample}}_CancerRNA_{{lane}}/star-fusion.fusion_predictions.tsv",
-            ag_fusion_directory=f"{FUSION_EPITOPES_DIR}/AGfusion/{{sample}}_CancerRNA_{{lane}}/"
+            main_vcf=f"{SPLICING_EPITOPES_DIR}/annotated_somatic_VCF/{{sample}}_somatic_VEP.vcf.gz",
+            regtools_tsv=f"{SPLICING_EPITOPES_DIR}/regtools_genomic_VCF_genecode/{{sample}}_splice_effects.tsv",
+            ref="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_genome.fa",
+            gtf="resources/genome_RNA_fusion/GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir/ref_annot.gtf.gz"
         output:
-            directory(f"{FUSION_EPITOPES_DIR}/pvacFuse/{{sample}}_CancerDNA_{{lane}}/")
+            directory(f"{SPLICING_EPITOPES_DIR}/pvacSplice/{{sample}}/")
         threads:
-            pvacfuse_threads
+            pvacsplice_threads
         params:
             hla_types=lambda wildcards: sample_dict[(wildcards.sample, "CancerDNA", wildcards.lane)]["hla_types"],
-            depth=pvacfuse_depth,
             epitope_lengths_1=epitope_lengths_1,
             epitope_lengths_2=epitope_lengths_2,
-            algorithms=pvacfuse_algorithms
+            algorithms=pvacsplice_algorithms
         shell:
             """
             docker run -u $(id -u):$(id -g) -v `pwd`:/data -v {global_tmpdir}:{global_tmpdir} -e TMPDIR={global_tmpdir} --rm griffithlab/pvactools \
                 /bin/bash -c "
-                pvacfuse run \
-/data/{input.ag_fusion_directory} \
-{wildcards.sample}_CancerRNA_{wildcards.lane} \
+                pvacsplice run \
+/data/{input.regtools_tsv} \
+{wildcards.sample}_CancerDNA \
 {params.hla_types} \
-{params.algorithms} \
+MHCnuggetsI MHCnuggetsII \
 /data/{output} \
--d {params.depth} \
--t {threads} \
---starfusion-file /data/{input.star_fusion_tsv} \
+/data/{input.main_vcf} \
+/data/{input.ref} \
+/data/{input.gtf} \
 --iedb-install-directory /opt/iedb \
+-t {threads} \
 -e1 {params.epitope_lengths_1} \
--e2 {params.epitope_lengths_2} "
+-e2 {params.epitope_lengths_2} \
+--normal-sample-name {wildcards.sample}_NormalDNA
+"
         """
 
