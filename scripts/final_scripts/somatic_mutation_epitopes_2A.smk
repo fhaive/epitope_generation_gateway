@@ -645,27 +645,36 @@ MHCnuggetsI MHCnuggetsII  \
 #  -e OPENBLAS_NUM_THREADS=4 \
 #  griffithlab/pvactools \
 #default for -s is 100 this is the length of tsv files are split into. -s 1000 could make things faster but uses more ram
+
 if hla_column_exists:
     rule PvacSeq_UserHLA:
         input:
             star_fusion_tsv=f"{HLA_ANALYSIS_DIR}/StarFusionOut/{{sample}}_CancerRNA_{{lane}}/star-fusion.fusion_predictions.tsv",
-            ag_fusion_directory=f"{FUSION_EPITOPES_DIR}/AGfusion/{{sample}}_CancerRNA_{{lane}}/"
+            ag_fusion_directory=f"{FUSION_EPITOPES_DIR}/AGfusion/{{sample}}_CancerRNA_{{lane}}/",
+            blastdb=rules.setup_blastdb.output.ready
         output:
             directory(f"{FUSION_EPITOPES_DIR}/pvacFuse/{{sample}}_CancerDNA_{{lane}}/")
         threads:
             pvacfuse_threads
         resources:
-            pvacslot = 1
+            pvacslot=1
         params:
             docker_host_flag=lambda wildcards: f"-H {config['dockerdir']}" if config.get("dockerdir") else "",
             hla_types=lambda wildcards: sample_dict[(wildcards.sample, "CancerDNA", wildcards.lane)]["hla_types"],
             depth=pvacfuse_depth,
             epitope_lengths_1=epitope_lengths_1,
             epitope_lengths_2=epitope_lengths_2,
-            algorithms=pvacfuse_algorithms
+            algorithms=pvacfuse_algorithms,
+            blastdb_dir=os.path.abspath(BLAST_DB_DIR)
         shell:
             """
-            docker run -u $(id -u):$(id -g) -v `pwd`:/data -v {global_tmpdir}:{global_tmpdir} -e TMPDIR={global_tmpdir} --rm griffithlab/pvactools \
+            docker {params.docker_host_flag} run -u $(id -u):$(id -g) \
+                -v `pwd`:/data \
+                -v {global_tmpdir}:/tmp \
+                -v {params.blastdb_dir}:/blastdb \
+                -e BLASTDB=/blastdb \
+                -e TMPDIR=/tmp \
+                --rm griffithlab/pvactools \
                 /bin/bash -c "
                 pvacfuse run \
 /data/{input.ag_fusion_directory} \
@@ -673,15 +682,13 @@ if hla_column_exists:
 {params.hla_types} \
 {params.algorithms} \
 /data/{output} \
--d {params.depth} \
--t {threads} \
---starfusion-file /data/{input.star_fusion_tsv} \
---iedb-install-directory /opt/iedb \
 -e1 {params.epitope_lengths_1} \
--e2 {params.epitope_lengths_2} "
+-e2 {params.epitope_lengths_2} \
+--iedb-install-directory /opt/iedb \
+-t {threads} \
+-d {params.depth} \
+--starfusion-file /data/{input.star_fusion_tsv} "
         """
-
-
 
 
 
