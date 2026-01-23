@@ -221,19 +221,19 @@ if hla_column_exists:
             algorithms=pvacfuse_algorithms
         shell:
             """
-            docker run -u $(id -u):$(id -g) -v `pwd`:/data -v {global_tmpdir}:{global_tmpdir} -e TMPDIR={global_tmpdir} --rm griffithlab/pvactools \
+            docker {params.docker_host_flag} run -u $(id -u):$(id -g) -v `pwd`:/data -v {global_tmpdir}:{global_tmpdir} -e TMPDIR={global_tmpdir} --rm griffithlab/pvactools \
                 /bin/bash -c "
                 pvacfuse run \
 /data/{input.ag_fusion_directory} \
 {wildcards.sample}_CancerRNA_{wildcards.lane} \
 {params.hla_types} \
-{params.algorithms} \
+MHCnuggetsI MHCnuggetsII \
 /data/{output} \
 -d {params.depth} \
 -t {threads} \
 --starfusion-file /data/{input.star_fusion_tsv} \
 --iedb-install-directory /opt/iedb \
 -e1 {params.epitope_lengths_1} \
--e2 {params.epitope_lengths_2} \
---run-reference-proteome-similarity"
+-e2 {params.epitope_lengths_2} "
         """
+
