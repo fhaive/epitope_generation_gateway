@@ -110,6 +110,8 @@ EGG is organized into seven modular components, each handling a specific analysi
 ### Module 0: QC Filtering
 **Purpose**: Quality control and preprocessing of raw sequencing data
 
+**Description**: This module employs FastQC for sequence quality assessment and fastp for automated adapter trimming and low-quality read filtering. All trimming thresholds and filters are fully configurable via a central YAML configuration file, ensuring downstream analysis proceeds with high-quality data.
+
 **Tools**: FastQC, fastp
 
 **Output**: Trimmed FASTQ files, QC reports
@@ -124,6 +126,8 @@ snakemake --use-conda --snakefile scripts/final_scripts/QC_filtering_module_0.sm
 ### Module 1A: Mutation Analysis
 **Purpose**: Somatic and germline variant calling from DNA sequencing
 
+**Description**: Following GATK best practices, this module processes tumor and matched normal DNA through read alignment, base quality score recalibration (BQSR), including panel of normals and known variant resources (dbSNP) to minimize false positives. Somatic variant calling using Mutect2 and HaplotypeCaller identifies germline mutations.
+
 **Tools**: GATK (BQSR, Mutect2, HaplotypeCaller), dbSNP, Panel of Normals
 
 **Output**: VCF files with somatic SNVs/indels and germline variants
@@ -137,6 +141,8 @@ snakemake --use-conda --snakefile scripts/final_scripts/mutation_analysis_module
 
 ### Module 1B: RNA Analysis
 **Purpose**: Multi-faceted RNA-seq analysis
+
+**Description**: Using trimmed Cancer RNA-seq data, this module performs three parallel analyses: STAR-Fusion detects gene fusion events, ArcasHLA conducts HLA typing, and FeatureCounts quantifies gene expression for downstream co-expression network analysis.
 
 **Tools**: 
 - STAR-Fusion (gene fusions)
@@ -155,6 +161,8 @@ snakemake --use-conda --snakefile scripts/final_scripts/RNA_analysis_module_1B.s
 ### Module 2A: Somatic Mutation Epitopes
 **Purpose**: Predict MHC binding epitopes from somatic mutations
 
+**Description**: Annotated somatic mutations from the variant calling pipeline are formatted for pVACseq analysis. The module supports allele specific binding prediction from somatic mutations including SNVs and indels.
+
 **Tools**: pVACseq
 
 **Input**: Annotated VCF from Module 1A, HLA types from Module 1B
@@ -170,6 +178,8 @@ snakemake --use-conda --snakefile scripts/final_scripts/somatic_mutation_epitope
 
 ### Module 2B: Fusion Epitopes
 **Purpose**: Predict neoepitopes from gene fusion breakpoints
+
+**Description**: RNA-derived fusion transcripts from STAR-Fusion are processed for neoantigen prediction using pVACfuse. The module automatically handles fusion breakpoint processing and peptide candidate generation across junction sites.
 
 **Tools**: pVACfuse
 
@@ -187,6 +197,8 @@ snakemake --use-conda --snakefile scripts/final_scripts/fusion_epitopes_module_2
 ### Module 2C: Splicing Epitopes
 **Purpose**: Identify neoepitopes from alternative splicing events
 
+**Description**: Tumor-specific alternative splicing events are identified using RegTools and processed through pVACsplice for neoepitope prediction. The module predicts viable epitopes candidate from cancer specific mutations causing alternative splicing events.
+
 **Tools**: RegTools, pVACsplice
 
 **Input**: RNA-seq alignments (Module 1B), DNA variants (Module 1A)
@@ -200,8 +212,10 @@ snakemake --use-conda --snakefile scripts/final_scripts/splicing_epitopes_module
 
 ---
 
-### Co-expression Network Module
-**Purpose**: Construct patient-specific gene co-expression networks and compute network centrality
+### Network Generation Module
+**Purpose**: Construct patient-specific gene co-expression networks, produces Patient Specific Functional Interaction Networks (pFINs) by integreting co-expression networks with HumanNetV2 functional PPI networks and compute network centrality
+
+**Description**: This module constructs personalized co-expression networks using LIONESS methodology on Pearson gene co-expression network. Gene level centrality metrics are computed and overlaid with HumanNet-XN protein-protein interaction data to identify functionally important neoantigens. 
 
 **Tools**: LIONESS, HumanNet-XN PPI database
 
@@ -220,8 +234,10 @@ snakemake --use-conda --snakefile scripts/final_scripts/sample_networks_generati
 
 ---
 
-### Prioritization Module
+### Epitope Prioritization Module
 **Purpose**: Integrate all evidence streams to rank neoepitope candidates
+
+**Description**: RNA-seq–derived patient networks and centrality features from the Network Generation Module served as inputs to a consensus epitope prioritization workflow. For each sample, we combined network‐topology measures with orthogonal evidence streams, including CRISPR-based gene essentiality (DepMap) and epitope-level sequence features such as predicted HLA binding affinity. All features are harmonized, scaled, and integrated through a consensus scoring to yield a robust, epitope rank. Candidate genes are further annotated with cancer hallmarks, Gene Ontology terms, and IntOGen driver status to provide interpretable biological context. The final output is a per sample ranked table that prioritizes neoepitope candidates occurring in biologically central and therapeutically relevant contexts.
 
 **Features Integrated**:
 - Network topology (centrality, LCI)
@@ -317,7 +333,9 @@ Module 0 (QC)
                         ↓
                 All modules → Prioritization Module
 ```
+### Detailed Explanation
 
+The analysis starts with Module 0 (QC Filtering) to standardize inputs. This step runs FastQC for per-read quality profiling and fastp for adapter/quality trimming and length filtering, producing trimmed FASTQ files plus sample-level QC summaries (read counts pre/post trimming, base-quality distributions, adapter content). We recommend applying Module 0 to all raw FASTQs (RNA and DNA) before any downstream analysis so that variant calling, HLA typing, fusion detection, and expression quantification start from uniformly filtered data. For epitope generation, Module 2A (somatic mutation epitopes) must run after Module 1A (DNA mutation analysis). Module 2B (fusion epitopes) should run after Module 1B (RNA analysis). Modules 2A and 2B are otherwise independent: either can be executed without the other, and 2B does not depend on 1A. Note, however, that 2A requires HLA types. If you use pipeline-derived HLA typing, run 1B before 2A; if you provide HLA alleles externally, 2A can proceed without 1B. Module 2C (splicing epitopes) should be run after both 1B (RNA) and 1A (DNA), as it uses RNA-derived splice events together with matched DNA calls and HLA types for filtering and annotation. For prioritization, we include a configuration file only for the Borda consensus settings (feature order/weights and tie handling). pVACtools options are modified directly in the Snakemake rules, not via this config. The final prioritization table should include, at minimum: sample_id; gene; variant_class (SNV/indel/fusion/splice); peptide; peptide_length; HLA_allele; binding_affinity; binding_rank; expression; network_centrality (e.g., degree, betweenness); DepMap_dependency; subcellular_localization; driver_status (IntOGen); cancer_hallmarks; and its output will include interactive tables that include Borda_consensus_score, final_rank and Gene Ontology plus cancer hallmark enrichment. 
 ---
 
 ## Output
@@ -604,3 +622,4 @@ EGG integrates and builds upon numerous open-source tools:
 
 
 We thank the developers of these tools for making their software freely available.
+
