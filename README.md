@@ -31,6 +31,7 @@ EGG goes beyond traditional binding affinity predictions by incorporating:
 
 ## Table of Contents
 
+- [Pipeline Implementation](#pipeline-implementation)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Pipeline Modules](#pipeline-modules)
@@ -39,9 +40,18 @@ EGG goes beyond traditional binding affinity predictions by incorporating:
 - [Output](#output)
 - [Resource Requirements](#resource-requirements)
 - [Citation](#citation)
-- [Contact](#contact)
 
 ---
+
+## Pipeline Implementation
+
+EGG is implemented as a Snakemake workflow cosisting of seven separate modules. where each module corresponds to a dedicated .smk file that can be executed independently or as part of an end-to-end run. 
+
+Each module is encapsulated in its own Snakefile under scripts/final_scripts/ and follows a consistent interface (csvfile=..., results_dir=...) so outputs are organized under a single root directory and can be reused reliably by downstream modules. Sample inputs are provided through a standardized CSV metadata file (sample identity, FASTQ paths, datatype, lane), enabling uniform batch processing without per-sample manual configuration.
+
+To minimize setup burden while preserving reproducibility, EGG provisions dependencies automatically at runtime: modules create and use local Conda environments via --use-conda, pull and run Docker images when required by specific tools, and download reference resources as needed as shown in more detail in the resource requirements section. Beyond installing Snakemake, Conda, and Docker, no additional manual installation should be necessary.
+
+In practice, the workflow is commonly initialized with QC filtering (Module 0), after which DNA (Module 1A) and RNA (Module 1B) analyses can run in parallel. Downstream epitope generation modules consume these outputs: 2A uses somatic variants from 1A plus HLA alleles (from 1B or provided externally), 2B uses fusion calls from 1B, and 2C integrates RNA-derived splice events with matched DNA calls and HLA context. RNA-seq expression outputs feed the co-expression network module, which generates patient-specific network features used alongside orthogonal evidence (binding features, expression, essentiality, and biological annotations) in the prioritization module to produce a final per-sample ranked neoepitope table. This is intended to complement binding and expression-based ranking with tumor functional context, prioritizing epitopes arising from functionally indispensable / network-central genes that may be less likely to be lost under tumor evolution and selective pressure, thereby supporting identification of potentially more durable vaccine targets. The recommended execution order is explained in the Execution Guide.
 
 ## Installation
 
@@ -455,6 +465,7 @@ The pipeline also generates:
 
 ### Reference Data
 
+
 The pipeline automatically downloads required references (~117 GB):
 
 ```
@@ -474,6 +485,8 @@ resources/
 ```
 
 These are downloaded once and saved locally for future runs.
+
+
 
 ---
 
@@ -588,5 +601,6 @@ EGG integrates and builds upon numerous open-source tools:
 - **HumanNet-XN** (Seoul National University)
 - **LIONESS** (Glass Lab)
 - **DepMap** (Broad Institute)
+
 
 We thank the developers of these tools for making their software freely available.
