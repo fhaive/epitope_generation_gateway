@@ -333,9 +333,10 @@ Module 0 (QC)
                         ↓
                 All modules → Prioritization Module
 ```
-### Detailed Explanation
 
+### Detailed Explanation
 The analysis starts with Module 0 (QC Filtering) to standardize inputs. This step runs FastQC for per-read quality profiling and fastp for adapter/quality trimming and length filtering, producing trimmed FASTQ files plus sample-level QC summaries (read counts pre/post trimming, base-quality distributions, adapter content). We recommend applying Module 0 to all raw FASTQs (RNA and DNA) before any downstream analysis so that variant calling, HLA typing, fusion detection, and expression quantification start from uniformly filtered data. For epitope generation, Module 2A (somatic mutation epitopes) must run after Module 1A (DNA mutation analysis). Module 2B (fusion epitopes) should run after Module 1B (RNA analysis). Modules 2A and 2B are otherwise independent: either can be executed without the other, and 2B does not depend on 1A. Note, however, that 2A requires HLA types. If you use pipeline-derived HLA typing, run 1B before 2A; if you provide HLA alleles externally, 2A can proceed without 1B. Module 2C (splicing epitopes) should be run after both 1B (RNA) and 1A (DNA), as it uses RNA-derived splice events together with matched DNA calls and HLA types for filtering and annotation. For prioritization, we include a configuration file only for the Borda consensus settings (feature order/weights and tie handling). pVACtools options are modified directly in the Snakemake rules, not via this config. The final prioritization table should include, at minimum: sample_id; gene; variant_class (SNV/indel/fusion/splice); peptide; peptide_length; HLA_allele; binding_affinity; binding_rank; expression; network_centrality (e.g., degree, betweenness); DepMap_dependency; subcellular_localization; driver_status (IntOGen); cancer_hallmarks; and its output will include interactive tables that include Borda_consensus_score, final_rank and Gene Ontology plus cancer hallmark enrichment. 
+
 ---
 
 ## Output
@@ -622,4 +623,5 @@ EGG integrates and builds upon numerous open-source tools:
 
 
 We thank the developers of these tools for making their software freely available.
+
 
