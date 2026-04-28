@@ -65,7 +65,7 @@ In practice, the workflow is commonly initialized with QC filtering (Module 0), 
 
 1. **Clone the repository**
 ```bash
-https://github.com/fhaive/epitope_generation_gateway
+git clone https://github.com/fhaive/epitope_generation_gateway.git
 cd epitope_generation_gateway
 ```
 
