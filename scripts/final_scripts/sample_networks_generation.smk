@@ -137,29 +137,29 @@ rule go_humannet_analysis:
         """
 
 
-#rule filter_sample_networks:
-#    input:
-#        rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks", "{sample}.rds"),
-#        config = "scripts/final_scripts/config/filter_config.yaml",
-#        humannet = f"{EPITOPE_PRIORITISATION}/gene_lists/HumanNet_ensembl.rds",
-#        mem_genes = f"{EPITOPE_PRIORITISATION}/gene_lists/membrane_ensembl.rds"
-#    output:
-#        rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"),
-#        mm = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"),
-#        genes = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt")
-#    conda:
-#        conda_env_filtering
-#    shell:
-#        """
-#        Rscript scripts/final_scripts/R_scripts/Filter_Sample_Networks.R \
-#            {input.rds} \
-#            {output.rds} \
-#            {output.mm} \
-#            {output.genes} \
-#            {input.config} \
-#            {input.humannet} \
-#            {input.mem_genes}
-#        """
+rule filter_sample_networks:
+    input:
+        rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks", "{sample}.rds"),
+        config = "scripts/final_scripts/config/filter_config.yaml",
+        humannet = f"{EPITOPE_PRIORITISATION}/gene_lists/HumanNet_ensembl.rds",
+        mem_genes = f"{EPITOPE_PRIORITISATION}/gene_lists/membrane_ensembl.rds"
+    output:
+        rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"),
+        mm = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"),
+        genes = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt")
+    conda:
+        conda_env_filtering
+    shell:
+        """
+        Rscript scripts/final_scripts/R_scripts/Filter_Sample_Networks.R \
+            {input.rds} \
+            {output.rds} \
+            {output.mm} \
+            {output.genes} \
+            {input.config} \
+            {input.humannet} \
+            {input.mem_genes}
+        """
 
 
 rule network_metrics_igraph_rds:
