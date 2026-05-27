@@ -56,12 +56,12 @@ samples = list(sample_df[sample_df['datatype'] == "CancerRNA"]['sample_name'].un
 rule all:
     input:
         f"{EPITOPE_PRIORITISATION}/normalised_counts/vst_mat.csv",
-#        generate_lioness_outputs()
+        generate_lioness_outputs()
         f"{EPITOPE_PRIORITISATION}/gene_lists/membrane_ensembl.rds",
         f"{EPITOPE_PRIORITISATION}/gene_lists/HumanNet_ensembl.rds",
-#        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"), sample=samples),
-#        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"), sample=samples),
-#        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt"), sample=samples)
+        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"), sample=samples),
+        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"), sample=samples),
+        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt"), sample=samples)
         # Centrality metrics outputs
         expand(os.path.join(EPITOPE_PRIORITISATION, "Network_Metrics_Betweenness", "{sample}_betweenness.tsv"), sample=samples),
         expand(os.path.join(EPITOPE_PRIORITISATION, "Network_Metrics_Degree", "{sample}_degree.tsv"), sample=samples),
