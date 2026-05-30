@@ -531,6 +531,50 @@ fastp:
   cut_window_size: 4            # Sliding window size for quality-based trimming
   cut_mean_quality: 20          # Mean quality threshold within the window to trigger trimming
 ```
+
+### Adjusting PPI filtrering and membrane edges addition
+```yaml
+“
+# Configuration for sample-specific network filtering.
+#
+# The final filtered network is built in two explicit steps:
+#   1. PPI filtering using HumanNet edges.
+#   2. Optional enrichment with high-weight edges touching membrane genes.
+
+ppi_filter:
+  # For each gene/node, keep this fraction of its strongest incident HumanNet/PPI edges.
+  # The strength is based on absolute sample-specific LIONESS edge weight.
+  # 0.20 keeps the top 20% of PPI edges per gene.
+  top_prop: 0.20
+
+membrane_enrichment:
+  # If true, add additional high-weight raw-network edges that touch membrane genes.
+  # If false, the final filtered network will be the PPI-only filtered network.
+  enabled: true
+
+  # Fraction of additional membrane-touched edges to add.
+  # For example, add_prop: 0.05 adds 5% additional membrane-touched edges.
+  add_prop: 0.05
+
+  # Denominator used to calculate how many membrane-touched edges are added.
+  # Options:
+  #   "unfiltered_ppi_edges":
+  #       n_added = ceiling(add_prop * number_of_weighted_unfiltered_HumanNet_edges)
+  #   "ppi_filtered_edges":
+  #       n_added = ceiling(add_prop * number_of_edges_in_the_PPI_only_filtered_network)
+  denominator: "unfiltered_ppi_edges"
+
+  # Candidate membrane-enrichment edges must touch at least one membrane gene.
+  # This should remain true. Setting it to false is not currently supported because
+  # it would change the biological meaning from membrane enrichment to general edge enrichment.
+  require_membrane_endpoint: true
+
+  # Candidate membrane-touched edges are ranked by absolute LIONESS edge weight.
+  # Currently, only "absolute_weight" is supported.
+  edge_selection_metric: "absolute_weight"
+ “
+```
+
 ### Adjusting Prioritization Weights
 
 EGG uses a Borda consensus to combine feature-ranked scores. Edit the YAML to change which columns are used, their weights, and whether higher or lower values rank better:
