@@ -473,12 +473,12 @@ The pipeline also generates:
 ### Computational Resources
 
 **Minimum**:
-- 32 GB RAM
+- 75 GB RAM
 - 8 CPU cores
 - 200 GB disk space
 
 **Recommended**:
-- 64+ GB RAM
+- 100+ GB RAM
 - 16+ CPU cores
 - 300 GB disk space (depends on how many samples are run)
 
