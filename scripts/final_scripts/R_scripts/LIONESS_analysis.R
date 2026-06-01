@@ -4,6 +4,15 @@ library(tidyverse)
 
 # Get command-line arguments: input vst_mat.csv and output directory
 args <- commandArgs(trailingOnly = TRUE)
+
+make_abs_path <- function(path, root = getwd()) {
+  # Keep absolute paths unchanged; only prefix relative paths.
+  if (grepl("^/", path)) {
+    return(normalizePath(path, mustWork = FALSE))
+  }
+  normalizePath(file.path(root, path), mustWork = FALSE)
+}
+
 input_file_rel <- args[1]  # Relative path to vst_mat.csv
 output_dir_rel <- args[2]  # Relative path to output directory (Sample_Specific_Networks)
 
@@ -19,8 +28,8 @@ cat("Relative input file:", input_file_rel, "\n")
 cat("Relative output directory:", output_dir_rel, "\n")
 
 # Resolve relative paths to absolute paths
-input_file <- normalizePath(file.path(project_root, input_file_rel))
-output_dir <- normalizePath(file.path(project_root, output_dir_rel), mustWork = FALSE)
+input_file <- make_abs_path(input_file_rel, project_root)
+output_dir <- make_abs_path(output_dir_rel, project_root)
 
 # Debug: Print resolved absolute paths
 cat("Absolute input file:", input_file, "\n")

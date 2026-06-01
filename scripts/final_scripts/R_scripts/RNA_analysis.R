@@ -7,6 +7,13 @@ library(igraph)
 
 # Get command-line arguments: output file followed by count files
 args <- commandArgs(trailingOnly = TRUE)
+
+make_abs_path <- function(path, root = getwd()) {
+  if (grepl("^/", path)) {
+    return(normalizePath(path, mustWork = FALSE))
+  }
+  normalizePath(file.path(root, path), mustWork = FALSE)
+}
 output_file_rel <- args[1]  # Relative output file path
 count_files_rel <- args[-1]  # Relative input count file paths
 
@@ -24,8 +31,8 @@ cat("Relative output file:", output_file_rel, "\n")
 cat("Relative count files:", count_files_rel, "\n")
 
 # Resolve relative paths to absolute paths
-output_file <- normalizePath(file.path(project_root, output_file_rel), mustWork = FALSE)
-count_files <- sapply(count_files_rel, function(f) normalizePath(file.path(project_root, f)))
+output_file <- make_abs_path(output_file_rel, project_root)
+count_files <- vapply(count_files_rel, make_abs_path, character(1), root = project_root)
 
 # Debug: Print resolved absolute paths
 cat("Absolute output file:", output_file, "\n")
