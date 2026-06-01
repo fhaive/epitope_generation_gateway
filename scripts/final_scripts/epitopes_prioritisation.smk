@@ -1,3 +1,5 @@
+# scripts/final_scripts/epitopes_prioritisation.smk
+
 import os
 import pandas as pd
 from glob import glob
@@ -44,7 +46,7 @@ TMPDIR = config.get("tmpdir", "/tmp")
 os.environ["TMPDIR"] = TMPDIR
 global_tmpdir = TMPDIR
 
-# make dirs needed
+# make dirs you need
 os.makedirs(SOMATIC_EPITOPES_DIR, exist_ok=True)
 os.makedirs(PRIORITISATION_DIR, exist_ok=True)
 os.makedirs(COMBINED_EPITOPES_DIR, exist_ok=True)
@@ -68,7 +70,7 @@ DEPMAP_FIGSHARE_ID     = str(config.get("depmap_figshare_article_id", "27993248"
 CRISPR_GENE_EFFECT = f"{PRIORITISATION_DIR}/CRISPRGeneEffect.csv"
 PAN_GENE_SCORES    = f"{PRIORITISATION_DIR}/depmap_pan_cancer_gene_score.csv"
 
-# path to Hallmark GMT 
+# optional: path to Hallmark GMT (MSigDB H collection or your own)
 HALLMARK_GMT = config.get("hallmark_gmt", "")
 
 # ---------- intogen config/paths ----------
@@ -84,7 +86,7 @@ ENSDB_V103_SENTINEL   = f"{ANNOTATIONHUB_CACHE}/EnsDb.Hsapiens.v103.ready"
 # ---------- config-driven columns for epitopes ----------
 EPITOPE_COLUMNS_YAML = config.get("epitope_columns_config", "scripts/final_scripts/config/epitope_columns.yaml")
 
-# ---------- helper: candidate path patterns  ----------
+# ---------- helper: candidate path patterns (use * for lane in pvacFuse) ----------
 from glob import glob
 
 
@@ -132,6 +134,7 @@ def generate_all_outputs():
         outputs.append(f"{BORDA_DIR}/{s}_epitopes_borda.csv")
         outputs.append(f"{FINAL_EPITOPES_DIR}/{s}_epitopes_final.csv")
         outputs.append(f"{FINAL_EPITOPES_DIR}/HLA/{s}_epitopes_final.with_hla.csv")
+        outputs.append(f"{FINAL_EPITOPES_DIR}/HLA_VAF/{s}_epitopes_final.with_hla.vaf.csv")
         outputs.append(f"{FINAL_EPITOPES_DIR}/HTML/{s}_epitopes.html")
     return outputs
 
@@ -260,7 +263,7 @@ rule intogen_cancer_driver_genes_table:
         """
 
 # ---------- rule: merge epitopes using IC50 (per sample) ----------
-# Point to R script
+# Point to your moved R script
 MERGE_EPITOPES_R = "scripts/final_scripts/R_scripts/merge_epitopes_ic50.R"
 rule merge_epitopes_ic50:
     input:
@@ -270,6 +273,8 @@ rule merge_epitopes_ic50:
     params:
         columns_yaml = EPITOPE_COLUMNS_YAML,
         script       = MERGE_EPITOPES_R
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "merge_epitopes_ic50", "{sample}.tsv")
     conda:
         conda_env_prioritisation
     shell:
@@ -308,6 +313,8 @@ rule annotate_epitopes_depmap_intogen:
         script  = ANNOTATE_EPITOPES_R,
         depmap  = PAN_GENE_SCORES,      
         intogen = INTOGEN_BY_GENE       
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "annotate_epitopes_depmap_intogen", "{sample}.tsv")
     conda:
         conda_env_prioritisation
     shell:
@@ -327,6 +334,8 @@ rule annotate_epitopes_depmap_intogen:
 rule reset_annotationhub_cache:
     output:
         RESET_AH_SENTINEL
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "reset_annotationhub_cache", "all_samples.tsv")
     run:
         import os, time
         cache = ANNOTATIONHUB_CACHE
@@ -351,6 +360,8 @@ rule precache_ensdb_v103:
         ENSDB_V103_SENTINEL
     params:
         script = PRECACHE_R
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "precache_ensdb_v103", "all_samples.tsv")
     conda:
         conda_env_prioritisation
     shell:
@@ -377,6 +388,8 @@ rule annotate_epitopes_with_network:
         impact      = lambda wc: f"{SAMPLE_NETWORKS_DIR}/Network_Metrics_LargestComponentImpact/{wc.sample}_impact.tsv",
         strength    = lambda wc: f"{SAMPLE_NETWORKS_DIR}/Network_Metrics_Strength/{wc.sample}_strength.tsv",
         wci         = lambda wc: f"{SAMPLE_NETWORKS_DIR}/Network_Metrics_Full/WCI/{wc.sample}_wci.tsv"
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "annotate_epitopes_with_network", "{sample}.tsv")
     conda:
         conda_env_prioritisation
     shell:
@@ -410,6 +423,8 @@ rule compute_borda_rank:
     params:
         script = COMPUTE_BORDA_R,
         cfg    = BORDA_CONFIG
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "compute_borda_rank", "{sample}.tsv")
     conda:
         conda_env_prioritisation
     shell:
@@ -434,6 +449,8 @@ rule annotate_go_and_hallmark:
     params:
         script   = GO_HALLMARK_R,
         hallmark = config.get("hallmark", "")   # "", "msigdbr", or path to .gmt
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "annotate_go_and_hallmark", "{sample}.tsv")
     conda:
         conda_env_go_hallmark
     shell:
@@ -464,6 +481,8 @@ rule add_hla_counts:
         geno_json  = lambda wc: f"{ARCASHLA_DIR}/{wc.sample}_CancerRNA_LRNA_sorted.genotype.json"
     output:
         augmented = f"{FINAL_EPITOPES_DIR}/HLA/{{sample}}_epitopes_final.with_hla.csv"
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "add_hla_counts", "{sample}.tsv")
     conda:
         conda_env_epitope_html
     shell:
@@ -477,12 +496,39 @@ rule add_hla_counts:
           --final-out "{output.augmented}"
         """
 
+
+rule add_tumor_dna_vaf:
+    input:
+        final_hla = f"{FINAL_EPITOPES_DIR}/HLA/{{sample}}_epitopes_final.with_hla.csv"
+    output:
+        out = f"{FINAL_EPITOPES_DIR}/HLA_VAF/{{sample}}_epitopes_final.with_hla.vaf.csv"
+    params:
+        somatic_mhci = lambda wc: _pick_first(epitope_patterns(wc.sample)["somatic_mhci"]),
+        somatic_mhcii = lambda wc: _pick_first(epitope_patterns(wc.sample)["somatic_mhcii"])
+    conda:
+        conda_env_epitope_html
+    shell:
+        r"""
+        set -euo pipefail
+        mkdir -p "{FINAL_EPITOPES_DIR}/HLA_VAF"
+        python "scripts/final_scripts/python/add_tumor_dna_vaf.py" \
+          --sample "{wildcards.sample}" \
+          --final-in "{input.final_hla}" \
+          --somatic-mhci "{params.somatic_mhci}" \
+          --somatic-mhcii "{params.somatic_mhcii}" \
+          --final-out "{output.out}"
+        test -s "{output.out}"
+        """
+
+
 rule build_interactive_epitope_html:
     input:
-        augmented = f"{FINAL_EPITOPES_DIR}/HLA/{{sample}}_epitopes_final.with_hla.csv",
+        augmented = f"{FINAL_EPITOPES_DIR}/HLA_VAF/{{sample}}_epitopes_final.with_hla.vaf.csv",
         script    = f"scripts/final_scripts/python/build_epitope_table.py"
     output:
         html = f"{FINAL_EPITOPES_DIR}/HTML/{{sample}}_epitopes.html"
+    benchmark:
+        os.path.join(PRIORITISATION_DIR, "benchmarks", "build_interactive_epitope_html", "{sample}.tsv")
     conda:
         conda_env_epitope_html
     shell:
