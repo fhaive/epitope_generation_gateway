@@ -56,12 +56,12 @@ samples = list(sample_df[sample_df['datatype'] == "CancerRNA"]['sample_name'].un
 rule all:
     input:
         f"{EPITOPE_PRIORITISATION}/normalised_counts/vst_mat.csv",
-        generate_lioness_outputs()
+#        generate_lioness_outputs()
         f"{EPITOPE_PRIORITISATION}/gene_lists/membrane_ensembl.rds",
         f"{EPITOPE_PRIORITISATION}/gene_lists/HumanNet_ensembl.rds",
-        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"), sample=samples),
-        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"), sample=samples),
-        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt"), sample=samples)
+#        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"), sample=samples),
+#        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"), sample=samples),
+#        expand(os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt"), sample=samples)
         # Centrality metrics outputs
         expand(os.path.join(EPITOPE_PRIORITISATION, "Network_Metrics_Betweenness", "{sample}_betweenness.tsv"), sample=samples),
         expand(os.path.join(EPITOPE_PRIORITISATION, "Network_Metrics_Degree", "{sample}_degree.tsv"), sample=samples),
@@ -137,25 +137,54 @@ rule go_humannet_analysis:
         """
 
 
-rule filter_sample_networks:
+
+rule filter_sample_networks_ppi_only:
     input:
         rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks", "{sample}.rds"),
+        config = "scripts/final_scripts/config/filter_config.yaml",
+        humannet = f"{EPITOPE_PRIORITISATION}/gene_lists/HumanNet_ensembl.rds"
+    output:
+        rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_only", "filtered_networks_rds", "{sample}_ppi_only.rds"),
+        mm = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_only", "filtered_networks_matrix", "{sample}.mtx"),
+        genes = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_only", "filtered_networks_matrix", "{sample}_genes.txt")
+    conda:
+        conda_env_filtering
+    shell:
+        """
+        Rscript scripts/final_scripts/R_scripts/Filter_PPI_Sample_Networks.R \
+            {input.rds} \
+            {output.rds} \
+            {output.mm} \
+            {output.genes} \
+            {input.config} \
+            {input.humannet}
+        """
+
+
+rule enrich_membrane_edges:
+    input:
+        raw_rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks", "{sample}.rds"),
+        ppi_rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_only", "filtered_networks_rds", "{sample}_ppi_only.rds"),
         config = "scripts/final_scripts/config/filter_config.yaml",
         humannet = f"{EPITOPE_PRIORITISATION}/gene_lists/HumanNet_ensembl.rds",
         mem_genes = f"{EPITOPE_PRIORITISATION}/gene_lists/membrane_ensembl.rds"
     output:
         rds = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_rds", "{sample}_filtered.rds"),
         mm = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}.mtx"),
-        genes = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt")
+        genes = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "filtered_networks_matrix", "{sample}_genes.txt"),
+        qc = os.path.join(EPITOPE_PRIORITISATION, "Sample_Specific_Networks_PPI_filtered", "membrane_enrichment_qc", "{sample}_membrane_enrichment.tsv")
+    threads: 4
     conda:
         conda_env_filtering
     shell:
         """
-        Rscript scripts/final_scripts/R_scripts/Filter_Sample_Networks.R \
-            {input.rds} \
+        Rscript scripts/final_scripts/R_scripts/Enrich_Membrane_Edges.R \
+            {input.raw_rds} \
+            {input.ppi_rds} \
             {output.rds} \
             {output.mm} \
             {output.genes} \
+            {output.qc} \
             {input.config} \
             {input.humannet} \
             {input.mem_genes}
@@ -257,8 +286,6 @@ rule network_qc_plots:
         """
         Rscript scripts/final_scripts/R_scripts/qc_network_plots.R {input.rds} {output.pdf}
         """
-
-
 
 
 
