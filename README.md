@@ -27,6 +27,14 @@ EGG goes beyond traditional binding affinity predictions by incorporating:
 - **Network centrality metrics** that capture a gene's importance to tumor cell function in particular related to resistance to cancer evolution and immune evasion
 - **Consensus scoring** that integrates network features with orthogonal evidence (DepMap essentiality, binding affinity, expression)
 
+### Registries and Persistent Identifiers
+
+EGG is registered and archived in the following services:
+
+- **bio.tools**: [biotoolsID: epitope_generation_gateway](https://bio.tools/epitope_generation_gateway)
+- **SciCrunch**: [RRID: SCR_028792](https://scicrunch.org/resolver/RRID:SCR_028792)
+- **WorkflowHub**: [DOI: 10.48546/workflowhub.workflow.2165.2](https://doi.org/10.48546/workflowhub.workflow.2165.2)
+
 ---
 
 ## Table of Contents
