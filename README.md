@@ -663,13 +663,21 @@ If you use EGG in your research, please cite:
 ## Availability of source code and requirements
 
 Project name: epitope_generation_gateway
+
 Project home page: https://github.com/fhaive/epitope_generation_gateway
+
 License: GPL-3.0 license
+
 Operating system(s): Linux / Unix-like systems
+
 Programming language: Snakemake, Python, R, Bash/shell, and YAML
+
 Other requirements: Conda or Mamba, Snakemake ≥6.0, Docker, and standard command-line bioinformatics dependencies installed through the workflow-managed Conda environments and Docker containers. Recommended computational resources depend on dataset size, sequencing depth, mutation burden, and the number of samples. For the 30-sample TCGA melanoma benchmark, the most memory-intensive EGG-specific step was membrane-edge enrichment, requiring approximately 75 GB peak RAM per sample, while LIONESS reconstruction required approximately 36 GB peak RAM for the 30-sample cohort.
+
 RRID: SCR_028792
+
 bio.tools: epitope_generation_gateway
+
 WorkflowHub: https://workflowhub.eu/workflows/2165?version=2
 
 ## Acknowledgments
