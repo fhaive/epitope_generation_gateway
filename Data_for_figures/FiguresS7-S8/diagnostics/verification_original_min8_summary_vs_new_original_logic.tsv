@@ -1,0 +1,89 @@
+endpoint	match_scope	top_type	cutoff	ranking_method	ranking_label	old_median_delta_hit_rate_vs_ic50	old_patients_better_than_ic50	old_patients_same_as_ic50	old_patients_worse_than_ic50	new_median_delta_hit_rate_vs_ic50	new_patients_better_than_ic50	new_patients_same_as_ic50	new_patients_worse_than_ic50	delta_new_minus_old	delta_new_minus_old_pct_points
+strict_positive_experimental	relaxed_min8_peptide	percent	10	borda	Borda	0.0	8	14	8	0.0	8	14	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	depmap_survivability	DepMap survivability	0.0	10	11	9	0.0	10	11	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_betweenness	Network betweenness	0.0	13	7	10	0.0	13	7	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_degree	Network degree	0.0277777777777777	15	5	10	0.02777777777777779	15	5	10	9.020562075079397e-17	9.020562075079397e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_impact	Network impact	0.0	13	8	9	0.0	13	8	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_strength	Network strength	0.0	13	8	9	0.0	13	8	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_wci	Network WCI	0.0	11	8	11	0.0	11	8	11	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	tumor_dna_vaf	Tumor DNA VAF	0.0217391304347826	15	8	7	0.021739130434782622	15	8	7	2.0816681711721685e-17	2.0816681711721685e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	20	borda	Borda	0.0	14	8	8	0.0	14	8	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	20	depmap_survivability	DepMap survivability	0.0647773279352226	17	5	8	0.06477732793522267	17	5	8	6.938893903907228e-17	6.938893903907228e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_betweenness	Network betweenness	0.0	14	7	9	0.0	14	7	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_degree	Network degree	0.0359848484848484	17	3	10	0.03598484848484848	17	3	10	8.326672684688674e-17	8.326672684688674e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_impact	Network impact	0.0406015037593984	16	5	9	0.04060150375939847	16	5	9	6.938893903907228e-17	6.938893903907228e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_strength	Network strength	0.038095238095238	16	5	9	0.03809523809523807	16	5	9	6.938893903907228e-17	6.938893903907228e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_wci	Network WCI	0.0	12	8	10	0.0	12	8	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	20	tumor_dna_vaf	Tumor DNA VAF	0.0714714714714714	16	7	7	0.07147147147147145	16	7	7	5.551115123125783e-17	5.551115123125783e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	borda	Borda	0.0442307692307692	18	5	7	0.04423076923076924	18	5	7	4.163336342344337e-17	4.163336342344337e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	depmap_survivability	DepMap survivability	0.08140756302521	20	3	7	0.08140756302521009	20	3	7	8.326672684688674e-17	8.326672684688674e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_betweenness	Network betweenness	0.0	14	6	10	0.0	14	6	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_degree	Network degree	0.0249999999999999	15	5	10	0.024999999999999994	15	5	10	9.367506770274758e-17	9.367506770274758e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_impact	Network impact	0.0300235478806907	16	5	9	0.030023547880690754	16	5	9	5.551115123125783e-17	5.551115123125783e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_strength	Network strength	0.0300235478806907	16	5	9	0.030023547880690754	16	5	9	5.551115123125783e-17	5.551115123125783e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_wci	Network WCI	0.0198194662480376	16	3	11	0.019819466248037695	16	3	11	9.71445146547012e-17	9.71445146547012e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	30	tumor_dna_vaf	Tumor DNA VAF	0.0388888888888888	16	6	8	0.03888888888888889	16	6	8	9.020562075079397e-17	9.020562075079397e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	borda	Borda	0.058277027027027	20	4	6	0.05827702702702703	20	4	6	2.7755575615628914e-17	2.7755575615628914e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	depmap_survivability	DepMap survivability	0.0423076923076922	18	5	7	0.042307692307692296	18	5	7	9.71445146547012e-17	9.71445146547012e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_betweenness	Network betweenness	0.0280062671367019	16	6	8	0.028006267136701915	16	6	8	1.3877787807814457e-17	1.3877787807814457e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_degree	Network degree	0.0527777777777777	19	2	9	0.052777777777777785	19	2	9	8.326672684688674e-17	8.326672684688674e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_impact	Network impact	0.0533428165007112	18	3	9	0.05334281650071124	18	3	9	3.469446951953614e-17	3.469446951953614e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_strength	Network strength	0.0582306830907054	17	4	9	0.058230683090705476	17	4	9	7.632783294297951e-17	7.632783294297951e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_wci	Network WCI	0.0131578947368421	15	5	10	0.013157894736842105	15	5	10	5.204170427930421e-18	5.204170427930421e-16
+strict_positive_experimental	relaxed_min8_peptide	percent	40	tumor_dna_vaf	Tumor DNA VAF	0.0526315789473684	20	3	7	0.05263157894736842	20	3	7	2.0816681711721685e-17	2.0816681711721685e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	borda	Borda	0.0226574500768049	17	3	10	0.02265745007680492	17	3	10	2.0816681711721685e-17	2.0816681711721685e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	depmap_survivability	DepMap survivability	0.0440605590062111	16	3	11	0.044060559006211183	16	3	11	8.326672684688674e-17	8.326672684688674e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_betweenness	Network betweenness	0.0164522513607125	16	2	12	0.01645225136071253	16	2	12	3.122502256758253e-17	3.1225022567582528e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_degree	Network degree	0.0325741525423728	18	1	11	0.032574152542372864	18	1	11	6.245004513516506e-17	6.2450045135165055e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_impact	Network impact	0.0348557692307692	18	3	9	0.03485576923076922	18	3	9	2.0816681711721685e-17	2.0816681711721685e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_strength	Network strength	0.0298690671031096	16	5	9	0.029869067103109645	16	5	9	4.5102810375396984e-17	4.5102810375396984e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_wci	Network WCI	0.0	14	2	14	0.0	14	2	14	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	50	tumor_dna_vaf	Tumor DNA VAF	0.0219610636277302	16	2	12	0.021961063627730287	16	2	12	8.673617379884035e-17	8.673617379884035e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	60	borda	Borda	0.0048076923076923	15	6	9	0.004807692307692318	15	6	9	1.8214596497756474e-17	1.8214596497756474e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	60	depmap_survivability	DepMap survivability	0.0	13	9	8	0.0	13	9	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_betweenness	Network betweenness	0.0	14	4	12	0.0	14	4	12	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_degree	Network degree	0.0	14	5	11	0.0	14	5	11	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_impact	Network impact	0.0048543689320388	15	4	11	0.004854368932038833	15	4	11	3.2959746043559335e-17	3.2959746043559335e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_strength	Network strength	0.0048076923076923	15	4	11	0.004807692307692318	15	4	11	1.8214596497756474e-17	1.8214596497756474e-15
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_wci	Network WCI	0.0	12	4	14	0.0	12	4	14	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	percent	60	tumor_dna_vaf	Tumor DNA VAF	-0.0048543689320388	9	6	15	-0.004854368932038847	9	6	15	-4.683753385137379e-17	-4.683753385137379e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	10	borda	Borda	0.1	17	7	6	0.1	17	7	6	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	10	depmap_survivability	DepMap survivability	0.0499999999999999	15	7	8	0.04999999999999999	15	7	8	9.020562075079397e-17	9.020562075079397e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_betweenness	Network betweenness	0.0	12	9	9	0.0	12	9	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_degree	Network degree	0.0499999999999999	15	9	6	0.04999999999999999	15	9	6	9.020562075079397e-17	9.020562075079397e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_impact	Network impact	0.0499999999999999	15	9	6	0.04999999999999999	15	9	6	9.020562075079397e-17	9.020562075079397e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_strength	Network strength	0.0999999999999999	16	8	6	0.09999999999999998	16	8	6	8.326672684688674e-17	8.326672684688674e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_wci	Network WCI	0.0	11	10	9	0.0	11	10	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	10	tumor_dna_vaf	Tumor DNA VAF	0.0	13	10	7	0.0	13	10	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	borda	Borda	0.0499999999999999	17	5	8	0.04999999999999999	17	5	8	9.020562075079397e-17	9.020562075079397e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	20	depmap_survivability	DepMap survivability	0.0	13	10	7	0.0	13	10	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_betweenness	Network betweenness	0.0	13	8	9	0.0	13	8	9	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_degree	Network degree	0.0	14	8	8	0.0	14	8	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_impact	Network impact	0.0	14	9	7	0.0	14	9	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_strength	Network strength	0.0	14	9	7	0.0	14	9	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_wci	Network WCI	0.0	14	9	7	0.0	14	9	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	20	tumor_dna_vaf	Tumor DNA VAF	0.0249999999999999	15	6	9	0.024999999999999994	15	6	9	9.367506770274758e-17	9.367506770274758e-15
+strict_positive_experimental	relaxed_min8_peptide	topn	30	borda	Borda	0.0	10	14	6	0.0	10	14	6	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	depmap_survivability	DepMap survivability	0.0	10	10	10	0.0	10	10	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_betweenness	Network betweenness	0.0	12	10	8	0.0	12	10	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_degree	Network degree	0.0	10	10	10	0.0	10	10	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_impact	Network impact	0.0	9	13	8	0.0	9	13	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_strength	Network strength	0.0	7	13	10	0.0	7	13	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_wci	Network WCI	0.0	9	11	10	0.0	9	11	10	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	30	tumor_dna_vaf	Tumor DNA VAF	0.0	8	11	11	0.0	8	11	11	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	borda	Borda	0.0	10	14	6	0.0	10	14	6	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	depmap_survivability	DepMap survivability	0.0	8	15	7	0.0	8	15	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_betweenness	Network betweenness	0.0	10	12	8	0.0	10	12	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_degree	Network degree	0.0	10	14	6	0.0	10	14	6	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_impact	Network impact	0.0	10	15	5	0.0	10	15	5	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_strength	Network strength	0.0	10	14	6	0.0	10	14	6	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_wci	Network WCI	0.0	10	12	8	0.0	10	12	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	40	tumor_dna_vaf	Tumor DNA VAF	0.0	7	15	8	0.0	7	15	8	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	borda	Borda	0.0	7	18	5	0.0	7	18	5	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	depmap_survivability	DepMap survivability	0.0	8	16	6	0.0	8	16	6	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_betweenness	Network betweenness	0.0	6	17	7	0.0	6	17	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_degree	Network degree	0.0	7	18	5	0.0	7	18	5	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_impact	Network impact	0.0	7	19	4	0.0	7	19	4	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_strength	Network strength	0.0	7	19	4	0.0	7	19	4	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_wci	Network WCI	0.0	7	16	7	0.0	7	16	7	0.0	0.0
+strict_positive_experimental	relaxed_min8_peptide	topn	50	tumor_dna_vaf	Tumor DNA VAF	0.0	6	17	7	0.0	6	17	7	0.0	0.0

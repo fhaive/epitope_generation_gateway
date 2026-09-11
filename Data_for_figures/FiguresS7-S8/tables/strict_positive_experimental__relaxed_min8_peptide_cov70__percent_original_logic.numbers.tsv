@@ -1,0 +1,43 @@
+match_scope	top_type	cutoff	ranking_method	ranking_label	n_patients	median_delta_hit_rate_vs_ic50_pct_points	patients_better_than_ic50	patients_same_as_ic50	patients_worse_than_ic50
+relaxed_min8_peptide_cov70	percent	10	borda	Borda	30	0.0	3	26	1
+relaxed_min8_peptide_cov70	percent	10	depmap_survivability	DepMap survivability	30	0.0	4	24	2
+relaxed_min8_peptide_cov70	percent	10	net_betweenness	Network betweenness	30	0.0	5	23	2
+relaxed_min8_peptide_cov70	percent	10	net_degree	Network degree	30	0.0	7	21	2
+relaxed_min8_peptide_cov70	percent	10	net_impact	Network impact	30	0.0	6	22	2
+relaxed_min8_peptide_cov70	percent	10	net_strength	Network strength	30	0.0	5	23	2
+relaxed_min8_peptide_cov70	percent	10	net_wci	Network WCI	30	0.0	5	23	2
+relaxed_min8_peptide_cov70	percent	20	borda	Borda	30	0.0	4	24	2
+relaxed_min8_peptide_cov70	percent	20	depmap_survivability	DepMap survivability	30	0.0	8	21	1
+relaxed_min8_peptide_cov70	percent	20	net_betweenness	Network betweenness	30	0.0	7	20	3
+relaxed_min8_peptide_cov70	percent	20	net_degree	Network degree	30	0.0	8	20	2
+relaxed_min8_peptide_cov70	percent	20	net_impact	Network impact	30	0.0	8	19	3
+relaxed_min8_peptide_cov70	percent	20	net_strength	Network strength	30	0.0	8	19	3
+relaxed_min8_peptide_cov70	percent	20	net_wci	Network WCI	30	0.0	8	19	3
+relaxed_min8_peptide_cov70	percent	30	borda	Borda	30	0.0	6	24	0
+relaxed_min8_peptide_cov70	percent	30	depmap_survivability	DepMap survivability	30	0.0	9	21	0
+relaxed_min8_peptide_cov70	percent	30	net_betweenness	Network betweenness	30	0.0	6	21	3
+relaxed_min8_peptide_cov70	percent	30	net_degree	Network degree	30	0.0	10	18	2
+relaxed_min8_peptide_cov70	percent	30	net_impact	Network impact	30	0.0	10	17	3
+relaxed_min8_peptide_cov70	percent	30	net_strength	Network strength	30	0.0	11	16	3
+relaxed_min8_peptide_cov70	percent	30	net_wci	Network WCI	30	0.0	9	18	3
+relaxed_min8_peptide_cov70	percent	40	borda	Borda	30	0.0	10	19	1
+relaxed_min8_peptide_cov70	percent	40	depmap_survivability	DepMap survivability	30	0.0	12	17	1
+relaxed_min8_peptide_cov70	percent	40	net_betweenness	Network betweenness	30	0.0	8	20	2
+relaxed_min8_peptide_cov70	percent	40	net_degree	Network degree	30	0.0	10	18	2
+relaxed_min8_peptide_cov70	percent	40	net_impact	Network impact	30	0.0	11	18	1
+relaxed_min8_peptide_cov70	percent	40	net_strength	Network strength	30	0.0	10	19	1
+relaxed_min8_peptide_cov70	percent	40	net_wci	Network WCI	30	0.0	10	18	2
+relaxed_min8_peptide_cov70	percent	50	borda	Borda	30	0.0	10	19	1
+relaxed_min8_peptide_cov70	percent	50	depmap_survivability	DepMap survivability	30	0.0	10	18	2
+relaxed_min8_peptide_cov70	percent	50	net_betweenness	Network betweenness	30	0.0	8	18	4
+relaxed_min8_peptide_cov70	percent	50	net_degree	Network degree	30	0.0	9	19	2
+relaxed_min8_peptide_cov70	percent	50	net_impact	Network impact	30	0.0	14	14	2
+relaxed_min8_peptide_cov70	percent	50	net_strength	Network strength	30	0.0	13	15	2
+relaxed_min8_peptide_cov70	percent	50	net_wci	Network WCI	30	0.0	12	17	1
+relaxed_min8_peptide_cov70	percent	60	borda	Borda	30	0.0	10	19	1
+relaxed_min8_peptide_cov70	percent	60	depmap_survivability	DepMap survivability	30	0.0	9	18	3
+relaxed_min8_peptide_cov70	percent	60	net_betweenness	Network betweenness	30	0.0	8	17	5
+relaxed_min8_peptide_cov70	percent	60	net_degree	Network degree	30	0.0	11	16	3
+relaxed_min8_peptide_cov70	percent	60	net_impact	Network impact	30	0.0	12	17	1
+relaxed_min8_peptide_cov70	percent	60	net_strength	Network strength	30	0.0	12	17	1
+relaxed_min8_peptide_cov70	percent	60	net_wci	Network WCI	30	0.0	12	17	1
