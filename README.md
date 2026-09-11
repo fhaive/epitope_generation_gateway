@@ -680,6 +680,15 @@ bio.tools: epitope_generation_gateway
 
 WorkflowHub: https://workflowhub.eu/workflows/2165?version=2
 
+## Figure source data
+
+Processed numerical source data underlying Figures 2, 3, and Supplementary
+Figures S2-S8 are provided in `Data_for_figures/`.
+
+The processed numerical source-data tables in `Data_for_figures/` are released
+under a separate CC0-1.0 dedication. Source code in this repository remains
+licensed under GPL-3.0.
+
 ## Acknowledgments
 
 EGG integrates and builds upon numerous open-source tools:
