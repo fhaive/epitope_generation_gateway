@@ -77,3 +77,9 @@ numpy
 pandas
 matplotlib
 scipy
+
+## Licence
+
+The numerical source-data files in this directory are released under the Creative Commons CC0 1.0 Universal Public Domain Dedication.
+
+This CC0 dedication applies to the processed numerical source-data tables in this directory. Source code in the main repository remains under the repository-level GPL-3.0 licence unless otherwise stated.
