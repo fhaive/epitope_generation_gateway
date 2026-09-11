@@ -1,0 +1,11 @@
+response	response_label	predictor	predictor_label	n_samples	spearman_rho	p_value
+somatic_total_neoantigens	Somatic total neoantigens	snv_count	SNV count	30	0.26405074993048955	0.158545526129083
+somatic_total_neoantigens	Somatic total neoantigens	indel_count	Indel count	30	0.37848754806545826	0.03916863511855974
+somatic_total_neoantigens	Somatic total neoantigens	snv_indel_count	SNV + indel count	30	0.2872443968838434	0.12378184200402385
+somatic_mhcI_neoantigens	Somatic MHC I neoantigens	snv_indel_count	SNV + indel count	30	0.27398598070521274	0.14288772592085627
+somatic_mhcII_neoantigens	Somatic MHC II neoantigens	snv_indel_count	SNV + indel count	30	0.3063377455278967	0.09967284390615638
+fusion_total_neoantigens	Fusion total neoantigens	fusion_count	Fusion event count	30	0.7199827960790672	7.286010732609999e-06
+fusion_mhcI_neoantigens	Fusion MHC I neoantigens	fusion_count	Fusion event count	30	0.6488082010194658	0.00010525400221944418
+fusion_mhcII_neoantigens	Fusion MHC II neoantigens	fusion_count	Fusion event count	30	0.7269762012097154	5.3660640918194e-06
+fusion_total_neoantigens	Fusion total neoantigens	snv_count	SNV count	30	-0.028147230202233482	0.8826214801659918
+fusion_total_neoantigens	Fusion total neoantigens	snv_indel_count	SNV + indel count	30	-0.03529573311073722	0.8530992000707115

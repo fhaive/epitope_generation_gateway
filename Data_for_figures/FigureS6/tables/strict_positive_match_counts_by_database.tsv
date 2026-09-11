@@ -1,0 +1,4 @@
+database	n_unique_candidates_any_strict_match	exact_peptide_candidates	exact_peptide_hla_candidates	relaxed_min8_peptide_candidates	relaxed_min8_peptide_hla_candidates	relaxed_min8_peptide_nonexact_candidates	relaxed_min8_peptide_hla_nonexact_candidates
+IEDB	545	1	0	561	0	560	0
+CEDAR	542	1	0	558	0	557	0
+TSNAdb_v2	5	0	0	5	0	5	0

@@ -1,0 +1,2 @@
+ic50_col	ic50_direction	depmap_col	depmap_direction	default_rank_col	default_score_col	driver_col	network_cols	note
+Median.MT.IC50.Score	lower is better	Depmap_survivability_score	lower/more negative is better	Borda_Rank	Borda_Score	Intogen_Driver_role	Net_Betweenness;Net_Degree;Net_Impact;Net_Strength;Net_WCI	HLA expression was excluded because it was not used in the Borda ranking.

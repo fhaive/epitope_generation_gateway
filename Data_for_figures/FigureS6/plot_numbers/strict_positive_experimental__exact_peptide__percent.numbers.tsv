@@ -1,0 +1,43 @@
+match_scope	top_type	cutoff	ranking_method	ranking_label	n_patients	median_delta_hit_rate_vs_ic50_pct_points	patients_better_than_ic50	patients_same_as_ic50	patients_worse_than_ic50
+exact_peptide	percent	10	borda	Borda	30	0.0	0	30	0
+exact_peptide	percent	10	depmap_survivability	DepMap survivability	30	0.0	0	30	0
+exact_peptide	percent	10	net_betweenness	Network betweenness	30	0.0	0	30	0
+exact_peptide	percent	10	net_degree	Network degree	30	0.0	0	30	0
+exact_peptide	percent	10	net_impact	Network impact	30	0.0	0	30	0
+exact_peptide	percent	10	net_strength	Network strength	30	0.0	0	30	0
+exact_peptide	percent	10	net_wci	Network WCI	30	0.0	0	30	0
+exact_peptide	percent	20	borda	Borda	30	0.0	0	30	0
+exact_peptide	percent	20	depmap_survivability	DepMap survivability	30	0.0	0	30	0
+exact_peptide	percent	20	net_betweenness	Network betweenness	30	0.0	0	30	0
+exact_peptide	percent	20	net_degree	Network degree	30	0.0	0	30	0
+exact_peptide	percent	20	net_impact	Network impact	30	0.0	0	30	0
+exact_peptide	percent	20	net_strength	Network strength	30	0.0	0	30	0
+exact_peptide	percent	20	net_wci	Network WCI	30	0.0	1	29	0
+exact_peptide	percent	30	borda	Borda	30	0.0	0	30	0
+exact_peptide	percent	30	depmap_survivability	DepMap survivability	30	0.0	0	30	0
+exact_peptide	percent	30	net_betweenness	Network betweenness	30	0.0	0	30	0
+exact_peptide	percent	30	net_degree	Network degree	30	0.0	0	30	0
+exact_peptide	percent	30	net_impact	Network impact	30	0.0	0	30	0
+exact_peptide	percent	30	net_strength	Network strength	30	0.0	0	30	0
+exact_peptide	percent	30	net_wci	Network WCI	30	0.0	1	29	0
+exact_peptide	percent	40	borda	Borda	30	0.0	0	30	0
+exact_peptide	percent	40	depmap_survivability	DepMap survivability	30	0.0	0	30	0
+exact_peptide	percent	40	net_betweenness	Network betweenness	30	0.0	0	30	0
+exact_peptide	percent	40	net_degree	Network degree	30	0.0	0	30	0
+exact_peptide	percent	40	net_impact	Network impact	30	0.0	0	30	0
+exact_peptide	percent	40	net_strength	Network strength	30	0.0	0	30	0
+exact_peptide	percent	40	net_wci	Network WCI	30	0.0	1	29	0
+exact_peptide	percent	50	borda	Borda	30	0.0	0	30	0
+exact_peptide	percent	50	depmap_survivability	DepMap survivability	30	0.0	0	30	0
+exact_peptide	percent	50	net_betweenness	Network betweenness	30	0.0	0	30	0
+exact_peptide	percent	50	net_degree	Network degree	30	0.0	0	30	0
+exact_peptide	percent	50	net_impact	Network impact	30	0.0	0	30	0
+exact_peptide	percent	50	net_strength	Network strength	30	0.0	0	30	0
+exact_peptide	percent	50	net_wci	Network WCI	30	0.0	1	29	0
+exact_peptide	percent	60	borda	Borda	30	0.0	0	29	1
+exact_peptide	percent	60	depmap_survivability	DepMap survivability	30	0.0	0	29	1
+exact_peptide	percent	60	net_betweenness	Network betweenness	30	0.0	0	29	1
+exact_peptide	percent	60	net_degree	Network degree	30	0.0	0	29	1
+exact_peptide	percent	60	net_impact	Network impact	30	0.0	0	29	1
+exact_peptide	percent	60	net_strength	Network strength	30	0.0	0	29	1
+exact_peptide	percent	60	net_wci	Network WCI	30	0.0	0	30	0

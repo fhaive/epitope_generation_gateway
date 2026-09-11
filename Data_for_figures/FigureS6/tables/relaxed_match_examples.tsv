@@ -1,0 +1,101 @@
+database	evidence_strength	reference_peptide	reference_length	n_candidate_ids_matched	match_type	reference_hla_original	reference_hla_normalized	pmid	reference_title
+CEDAR	presentation	SSDKYGDTSY	10	1	relaxed_min8	HLA-A*01:01	HLA-A*01:01		MHC I-associated peptides preferentially derive from transcripts bearing miRNA response elements
+CEDAR	presentation	VSSSHDKSLRLW	12	1	relaxed_min8	HLA-B*57:01	HLA-B*57:01	22645359	Drug hypersensitivity caused by alteration of the MHC-presented self-peptide repertoire.
+CEDAR	presentation	EEAEWQTRW	9	1	relaxed_min8	HLA-B*44:27	HLA-B*44:27	21872626	Mismatches outside exons 2 and 3 do not alter the peptide motif of the allele group B*44:02P.
+CEDAR	presentation	IYMFNMTGL	9	1	relaxed_min8	H2-Kd		22872234	Constitutive and inflammatory immunopeptidome of pancreatic &beta;-cells.
+CEDAR	presentation	VYNVLKTLM	9	2	relaxed_min8	H2-Kd		22872234	Constitutive and inflammatory immunopeptidome of pancreatic &beta;-cells.
+CEDAR	presentation	LVRPGTAL	8	1	relaxed_min8	HLA-A*02:01	HLA-A*02:01	22544926	Two preferentially expressed proteins protect vascular endothelial cells from an attack by peptide-specific CTL.
+CEDAR	presentation	LVRPGTALEL	10	1	relaxed_min8	HLA-A*02:01	HLA-A*02:01	22544926	Two preferentially expressed proteins protect vascular endothelial cells from an attack by peptide-specific CTL.
+CEDAR	presentation	LLLGHVAQV	9	1	relaxed_min8	HLA-A*02:01	HLA-A*02:01	22544926	Two preferentially expressed proteins protect vascular endothelial cells from an attack by peptide-specific CTL.
+CEDAR	presentation	IVDKTASFV	9	2	relaxed_min8	HLA-A*02:01	HLA-A*02:01	22544926	Two preferentially expressed proteins protect vascular endothelial cells from an attack by peptide-specific CTL.
+CEDAR	presentation	ALLQQVHSA	9	1	relaxed_min8	HLA-A*02:01	HLA-A*02:01	22544926	Two preferentially expressed proteins protect vascular endothelial cells from an attack by peptide-specific CTL.
+CEDAR	presentation	NTNLPKIFSI	10	1	relaxed_min8	H2-Db		20173027	Endoplasmic reticulum aminopeptidase associated with antigen processing defines the composition and structure of MHC class I peptide repertoire in normal and virus-infected cells.
+CEDAR	presentation	HESAVTGLSL	10	1	relaxed_min8	HLA-B*40:02	HLA-B*40:02	24366607	Increased diversity of the HLA-B40 ligandome by the presentation of peptides phosphorylated at their main anchor residue.
+CEDAR	presentation	SEQKFLIGL	9	1	relaxed_min8	HLA-B*40:02	HLA-B*40:02	24366607	Increased diversity of the HLA-B40 ligandome by the presentation of peptides phosphorylated at their main anchor residue.
+CEDAR	presentation	AENLSVPVI	9	1	relaxed_min8	HLA-B*40:02	HLA-B*40:02	24366607	Increased diversity of the HLA-B40 ligandome by the presentation of peptides phosphorylated at their main anchor residue.
+CEDAR	presentation	SEREAIEVF	9	1	relaxed_min8	HLA-B*40:02	HLA-B*40:02	24366607	Increased diversity of the HLA-B40 ligandome by the presentation of peptides phosphorylated at their main anchor residue.
+CEDAR	presentation	IVAFTTATK	9	1	relaxed_min8	HLA-A*03:01	HLA-A*03:01		The impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides
+CEDAR	presentation	DMGNRVTAL	9	2	relaxed_min8	HLA-B*08:01	HLA-B*08:01		The impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides
+CEDAR	presentation	EEAEWQTRW	9	1	relaxed_min8	HLA-B*44:03	HLA-B*44:03		The impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides
+CEDAR	presentation	EHKKRWASM	9	1	relaxed_min8	HLA-B*08:01	HLA-B*08:01		The impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides
+CEDAR	presentation	SEAKAFHDY	9	2	relaxed_min8	HLA-B*44:03	HLA-B*44:03		The impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-B*44:03	HLA-B*44:03		The impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B*35:01	HLA-B*35:01	24397554	A comprehensive analysis of constitutive naturally processed and presented HLA-C*04:01 (Cw4)-specific peptides.
+CEDAR	presentation	DMGNRVTAL	9	2	relaxed_min8	HLA-B*08:01	HLA-B*08:01	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	EEAEWQTRW	9	1	relaxed_min8	HLA-B*44:03	HLA-B*44:03	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	EHKKRWASM	9	1	relaxed_min8	HLA-B*08:01	HLA-B*08:01	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	IVAFTTATK	9	1	relaxed_min8	HLA-A*03:01	HLA-A*03:01	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-B*44:03	HLA-B*44:03	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-B*44:03	HLA-B*44:03	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	SEAKAFHDY	9	2	relaxed_min8	HLA-B*44:03	HLA-B*44:03	24714562	Impact of genomic polymorphisms on the repertoire of human MHC class I-associated peptides.
+CEDAR	presentation	GRNSFEVRV	9	1	relaxed_min8	HLA-B*27:09	HLA-B*27:09	15104674	HLA-B27: a registry of constitutive peptide ligands.
+CEDAR	presentation	KAKAKPVTR	9	1	relaxed_min8	HLA-A31	HLA-A*31	25548167	HLA ligandome analysis identifies the underlying specificities of spontaneous antileukemia immune responses in chronic lymphocytic leukemia (CLL).
+CEDAR	presentation	RIHTGEKPYK	10	1	relaxed_min8	HLA-A3	HLA-A*03	25548167	HLA ligandome analysis identifies the underlying specificities of spontaneous antileukemia immune responses in chronic lymphocytic leukemia (CLL).
+CEDAR	presentation	EEMGVQGGRAKRY	13	1	relaxed_min8	HLA-B*44:02	HLA-B*44:02	25505266	Naturally processed non-canonical HLA-A*02:01 presented peptides.
+CEDAR	presentation	RPRSSTDALIEM	12	1	relaxed_min8	HLA-B*07:02	HLA-B*07:02	25505266	Naturally processed non-canonical HLA-A*02:01 presented peptides.
+CEDAR	presentation	SPRGGVAGSGEASL	14	1	relaxed_min8	HLA-B*07:02	HLA-B*07:02	25505266	Naturally processed non-canonical HLA-A*02:01 presented peptides.
+CEDAR	presentation	YVLEGKELEFYL	12	2	relaxed_min8	HLA class I		25505266	Naturally processed non-canonical HLA-A*02:01 presented peptides.
+CEDAR	presentation	GRNSFEVRV	9	1	relaxed_min8	HLA-B*27:05	HLA-B*27:05	25469497	Dominant role of the ERAP1 polymorphism R528K in shaping the HLA-B27 Peptidome through differential processing determined by multiple peptide residues.
+CEDAR	presentation	GRYLRRELL	9	1	relaxed_min8	HLA-B*27:05	HLA-B*27:05	25469497	Dominant role of the ERAP1 polymorphism R528K in shaping the HLA-B27 Peptidome through differential processing determined by multiple peptide residues.
+CEDAR	presentation	SRVQVQKAF	9	2	relaxed_min8	HLA-B*27:05	HLA-B*27:05	25469497	Dominant role of the ERAP1 polymorphism R528K in shaping the HLA-B27 Peptidome through differential processing determined by multiple peptide residues.
+CEDAR	presentation	EHKKRWASM	9	1	relaxed_min8	HLA-B*08:01	HLA-B*08:01		Global proteogenomic analysis of human MHC I-associated peptides derived from non-canonical reading frames
+CEDAR	presentation	GRNSFEVRV	9	1	relaxed_min8	HLA-B*27:09	HLA-B*27:09	9045906	Susceptibility to ankylosing spondylitis correlates with the C-terminal residue of peptides presented by various HLA-B27 subtypes.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA class I		25810538	Early Kinetics of the HLA Class I-Associated Peptidome of MVA.HIVconsv-Infected Cells.
+CEDAR	presentation	RMEEMGVQGGRAK	13	1	relaxed_min8	HLA class I		25810538	Early Kinetics of the HLA Class I-Associated Peptidome of MVA.HIVconsv-Infected Cells.
+CEDAR	presentation	VSSSHDKSLRLW	12	1	relaxed_min8	HLA-B*57:01	HLA-B*57:01	26024233	Acyclovir Has Low but Detectable Influence on HLA-B*57:01 Specificity without Inducing Hypersensitivity.
+CEDAR	presentation	FVAKFMALY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	GYLALGLTY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	LGSKVLRQY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	QFTAMRDLY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	RMDKSAVGHEY	11	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	RVVSNLLYY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	STVFVANLDY	10	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	TWNAVLLRY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	YAKGFGGQY	9	1	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	YVLEGKELEFY	11	2	relaxed_min8	HLA-A*29:02	HLA-A*29:02	25892735	Endoplasmic Reticulum Aminopeptidase 1 (ERAP1) Polymorphism Relevant to Inflammatory Disease Shapes the Peptidome of the Birdshot Chorioretinopathy-Associated HLA-A*29:02 Antigen.
+CEDAR	presentation	EAEWQTRWFY	10	1	relaxed_min8	HLA-A*01:01	HLA-A*01:01	25880248	A comprehensive analysis of peptides presented by HLA-A1.
+CEDAR	presentation	DEINFLRAL	9	1	relaxed_min8	HLA-B44	HLA-B*44	18991276	Essential differences in ligand presentation and T cell epitope recognition among HLA molecules of the HLA-B44 supertype.
+CEDAR	presentation	DEINFLRALY	10	1	relaxed_min8	HLA-B44	HLA-B*44	18991276	Essential differences in ligand presentation and T cell epitope recognition among HLA molecules of the HLA-B44 supertype.
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-B*41:01	HLA-B*41:01	18991276	Essential differences in ligand presentation and T cell epitope recognition among HLA molecules of the HLA-B44 supertype.
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-B*45:01	HLA-B*45:01	18991276	Essential differences in ligand presentation and T cell epitope recognition among HLA molecules of the HLA-B44 supertype.
+CEDAR	presentation	SEREAIEVF	9	1	relaxed_min8	HLA-B*18:01	HLA-B*18:01	18991276	Essential differences in ligand presentation and T cell epitope recognition among HLA molecules of the HLA-B44 supertype.
+CEDAR	presentation	GRNSFEVRV	9	1	relaxed_min8	HLA-B*27:05	HLA-B*27:05	20112406	The HLA-B*2705 peptidome.
+CEDAR	presentation	RRIHTGEKPY	10	1	relaxed_min8	HLA-B*27:05	HLA-B*27:05	20112406	The HLA-B*2705 peptidome.
+CEDAR	presentation	GRISIMQFF	9	1	relaxed_min8	HLA-B*27:05	HLA-B*27:05	20112406	The HLA-B*2705 peptidome.
+CEDAR	presentation	SRVGNILHR	9	1	relaxed_min8	HLA-B*27:05	HLA-B*27:05	20112406	The HLA-B*2705 peptidome.
+CEDAR	presentation	VLEGKELEFYL	11	2	relaxed_min8	HLA-A*02:01	HLA-A*02:01	23555621	Diversity of natural self-derived ligands presented by different HLA class I molecules in transporter antigen processing-deficient cells.
+CEDAR	presentation	YVLEGKELEFYL	12	2	relaxed_min8	HLA-A*02:01	HLA-A*02:01	23555621	Diversity of natural self-derived ligands presented by different HLA class I molecules in transporter antigen processing-deficient cells.
+CEDAR	presentation	AYLKKNHEEEMKDL	14	2	relaxed_min8	HLA class I		26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	DAGPPTHAF	9	1	relaxed_min8	HLA-B*35:01	HLA-B*35:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	HPYSQALIQY	10	1	relaxed_min8	HLA-B*35:01	HLA-B*35:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	IGLVRPGTAL	10	1	relaxed_min8	HLA class I		26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B*35:01	HLA-B*35:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-C*03:04	HLA-C*03:04	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B*07:02	HLA-B*07:02	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	IVDKTASFV	9	2	relaxed_min8	HLA-C*05:01	HLA-C*05:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	KEYERFSKY	9	1	relaxed_min8	HLA-B*44:02	HLA-B*44:02	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	KIGLVRPGTA	10	1	relaxed_min8	HLA class I		26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	KIQEILTQV	9	1	relaxed_min8	HLA-A*02:01	HLA-A*02:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	LQIDNARLAADDF	13	2	relaxed_min8	HLA class I		26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	LQIDNARLAADDF	13	2	relaxed_min8	HLA-B*15:01	HLA-B*15:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	LVRPGTALELL	11	1	relaxed_min8	HLA-C*05:01	HLA-C*05:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	RIHTGEKPY	9	1	relaxed_min8	HLA-B*15:01	HLA-B*15:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	RNVSTGDVNVE	11	2	relaxed_min8	HLA class I		26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	RQLGSLSKY	9	1	relaxed_min8	HLA-B*15:01	HLA-B*15:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	SEAKAFHDY	9	2	relaxed_min8	HLA-B*44:02	HLA-B*44:02	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	SELQAIKTEL	10	2	relaxed_min8	HLA-B*40:01	HLA-B*40:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	TADEVHYF	8	1	relaxed_min8	HLA-C*05:01	HLA-C*05:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	VSQVGKEL	8	1	relaxed_min8	HLA-C*03:04	HLA-C*03:04	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	VTIKKDVDGAY	11	1	relaxed_min8	HLA-A*01:01	HLA-A*01:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	VTIKKDVDGAY	11	1	relaxed_min8	HLA-B*15:01	HLA-B*15:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	WRQVEGMED	9	1	relaxed_min8	HLA class I		26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	YAKGFGGQY	9	1	relaxed_min8	HLA-B*15:01	HLA-B*15:01	26375851	Comprehensive Analysis of the Naturally Processed Peptide Repertoire: Differences between HLA-A and B in the Immunopeptidome.
+CEDAR	presentation	ALLQQVHSA	9	1	relaxed_min8	HLA-A*02:01	HLA-A*02:01	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	APASASQKL	9	1	relaxed_min8	HLA-B7	HLA-B*07	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	APELQRHEL	9	1	relaxed_min8	HLA-B7	HLA-B*07	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	DAGPPTHAF	9	1	relaxed_min8	HLA-B35	HLA-B*35	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B7	HLA-B*07	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B7	HLA-B*07	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B39	HLA-B*39	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.
+CEDAR	presentation	IPNEIIHAL	9	1	relaxed_min8	HLA-B35	HLA-B*35	26154972	An open-source computational and data resource to analyze digital maps of immunopeptidomes.

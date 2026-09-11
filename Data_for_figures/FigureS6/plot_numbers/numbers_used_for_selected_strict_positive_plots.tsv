@@ -1,0 +1,309 @@
+endpoint	match_scope	top_type	cutoff	ranking_method	ranking_label	ranking_column	ranking_direction	n_patients	median_delta_hit_rate_vs_ic50	median_delta_hit_rate_vs_ic50_pct_points	patients_better_than_ic50	patients_same_as_ic50	patients_worse_than_ic50
+strict_positive_experimental	exact_peptide	percent	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	exact_peptide	percent	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	exact_peptide	percent	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	exact_peptide	percent	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	percent	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	exact_peptide	percent	60	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	29	1
+strict_positive_experimental	exact_peptide	percent	60	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	29	1
+strict_positive_experimental	exact_peptide	percent	60	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	29	1
+strict_positive_experimental	exact_peptide	percent	60	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	29	1
+strict_positive_experimental	exact_peptide	percent	60	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	29	1
+strict_positive_experimental	exact_peptide	percent	60	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	29	1
+strict_positive_experimental	exact_peptide	percent	60	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide	topn	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	exact_peptide_hla	percent	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	percent	60	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	exact_peptide_hla	topn	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide	percent	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	8	14	8
+strict_positive_experimental	relaxed_min8_peptide	percent	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	10	11	9
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	13	7	10
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0277777777777777	2.77777777777777	15	5	10
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	13	8	9
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	13	8	9
+strict_positive_experimental	relaxed_min8_peptide	percent	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	11	8	11
+strict_positive_experimental	relaxed_min8_peptide	percent	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	14	8	8
+strict_positive_experimental	relaxed_min8_peptide	percent	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0647773279352226	6.47773279352226	17	5	8
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	14	7	9
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0359848484848484	3.5984848484848397	17	3	10
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0406015037593984	4.06015037593984	16	5	9
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_strength	Network strength	Net_Strength	higher_better	30	0.038095238095238	3.8095238095238	16	5	9
+strict_positive_experimental	relaxed_min8_peptide	percent	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	12	8	10
+strict_positive_experimental	relaxed_min8_peptide	percent	30	borda	Borda	Borda_Rank	lower_better	30	0.0442307692307692	4.42307692307692	18	5	7
+strict_positive_experimental	relaxed_min8_peptide	percent	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.08140756302521	8.140756302521	20	3	7
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	14	6	10
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0249999999999999	2.4999999999999902	15	5	10
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0300235478806907	3.00235478806907	16	5	9
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0300235478806907	3.00235478806907	16	5	9
+strict_positive_experimental	relaxed_min8_peptide	percent	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0198194662480376	1.9819466248037598	16	3	11
+strict_positive_experimental	relaxed_min8_peptide	percent	40	borda	Borda	Borda_Rank	lower_better	30	0.058277027027027	5.8277027027027	20	4	6
+strict_positive_experimental	relaxed_min8_peptide	percent	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0423076923076922	4.23076923076922	18	5	7
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0280062671367019	2.80062671367019	16	6	8
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0527777777777777	5.27777777777777	19	2	9
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0533428165007112	5.33428165007112	18	3	9
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0582306830907054	5.82306830907054	17	4	9
+strict_positive_experimental	relaxed_min8_peptide	percent	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0131578947368421	1.31578947368421	15	5	10
+strict_positive_experimental	relaxed_min8_peptide	percent	50	borda	Borda	Borda_Rank	lower_better	30	0.0226574500768049	2.26574500768049	17	3	10
+strict_positive_experimental	relaxed_min8_peptide	percent	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0440605590062111	4.40605590062111	16	3	11
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0164522513607125	1.64522513607125	16	2	12
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0325741525423728	3.25741525423728	18	1	11
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0348557692307692	3.48557692307692	18	3	9
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0298690671031096	2.98690671031096	16	5	9
+strict_positive_experimental	relaxed_min8_peptide	percent	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	14	2	14
+strict_positive_experimental	relaxed_min8_peptide	percent	60	borda	Borda	Borda_Rank	lower_better	30	0.0048076923076923	0.48076923076923	15	6	9
+strict_positive_experimental	relaxed_min8_peptide	percent	60	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	13	9	8
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	14	4	12
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	14	5	11
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_impact	Network impact	Net_Impact	higher_better	30	0.0048543689320388	0.48543689320388	15	4	11
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_strength	Network strength	Net_Strength	higher_better	30	0.0048076923076923	0.48076923076923	15	4	11
+strict_positive_experimental	relaxed_min8_peptide	percent	60	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	12	4	14
+strict_positive_experimental	relaxed_min8_peptide	topn	10	borda	Borda	Borda_Rank	lower_better	30	0.1	10.0	17	7	6
+strict_positive_experimental	relaxed_min8_peptide	topn	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0499999999999999	4.99999999999999	15	7	8
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	12	9	9
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0499999999999999	4.99999999999999	15	9	6
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0499999999999999	4.99999999999999	15	9	6
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0999999999999999	9.99999999999999	16	8	6
+strict_positive_experimental	relaxed_min8_peptide	topn	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	11	10	9
+strict_positive_experimental	relaxed_min8_peptide	topn	20	borda	Borda	Borda_Rank	lower_better	30	0.0499999999999999	4.99999999999999	17	5	8
+strict_positive_experimental	relaxed_min8_peptide	topn	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	13	10	7
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	13	8	9
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	14	8	8
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	14	9	7
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	14	9	7
+strict_positive_experimental	relaxed_min8_peptide	topn	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	14	9	7
+strict_positive_experimental	relaxed_min8_peptide	topn	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	10	14	6
+strict_positive_experimental	relaxed_min8_peptide	topn	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	10	10	10
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	12	10	8
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	10	10	10
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	9	13	8
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	7	13	10
+strict_positive_experimental	relaxed_min8_peptide	topn	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	9	11	10
+strict_positive_experimental	relaxed_min8_peptide	topn	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	10	14	6
+strict_positive_experimental	relaxed_min8_peptide	topn	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	8	15	7
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	10	12	8
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	10	14	6
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	10	15	5
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	10	14	6
+strict_positive_experimental	relaxed_min8_peptide	topn	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	10	12	8
+strict_positive_experimental	relaxed_min8_peptide	topn	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	7	18	5
+strict_positive_experimental	relaxed_min8_peptide	topn	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	8	16	6
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	6	17	7
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	7	18	5
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	7	19	4
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	7	19	4
+strict_positive_experimental	relaxed_min8_peptide	topn	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	7	16	7
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	percent	60	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	10	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	20	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	1	29	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	30	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	40	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	borda	Borda	Borda_Rank	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	depmap_survivability	DepMap survivability	Depmap_survivability_score	lower_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	net_betweenness	Network betweenness	Net_Betweenness	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	net_degree	Network degree	Net_Degree	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	net_impact	Network impact	Net_Impact	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	net_strength	Network strength	Net_Strength	higher_better	30	0.0	0.0	0	30	0
+strict_positive_experimental	relaxed_min8_peptide_hla	topn	50	net_wci	Network WCI	Net_WCI	higher_better	30	0.0	0.0	0	30	0

@@ -1,0 +1,4 @@
+database	evidence_strength	strict_reference_rows	unique_strict_reference_peptides	egg_candidates_exact_peptide_match	reference_peptides_exactly_matched	egg_candidates_relaxed_min8_match	reference_peptides_relaxed_min8_matched
+CEDAR	ALL_STRICT	4346554	1223992	1	1	542	1224
+IEDB	ALL_STRICT	4562446	1329895	1	1	545	1247
+TSNAdb_v2	ALL_STRICT	1854	1666	0	0	5	1

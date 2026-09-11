@@ -1,0 +1,3 @@
+scenario	MHC_IC50_weight	DepMap_weight	WCI_weight	PPI_topology_total_weight	PPI_topology_metrics
+Original/default	0.25	0.25	0.1	0.4	Net_Betweenness;Net_Degree;Net_Impact/LCI;Net_Strength
+PPI/topology ablated	0.25	0.25	0.5	0.0	removed

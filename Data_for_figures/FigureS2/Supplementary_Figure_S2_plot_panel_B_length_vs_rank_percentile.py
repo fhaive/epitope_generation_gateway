@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent
+
+DATASET = BASE / "Supplementary_Figure_S2_source_data_per_candidate.tsv"
+SUMMARY = BASE / "Supplementary_Figure_S2_summary_statistics.tsv"
+PLOT_DIR = BASE / "plots"
+
+PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+def set_pub_style():
+    mpl.rcParams.update({
+        "figure.dpi": 110,
+        "savefig.dpi": 300,
+        "font.size": 12,
+        "axes.labelsize": 12,
+        "axes.titlesize": 13,
+        "xtick.labelsize": 10,
+        "ytick.labelsize": 10,
+        "legend.fontsize": 11,
+        "axes.spines.top": False,
+        "axes.spines.right": False,
+        "axes.grid": True,
+        "grid.alpha": 0.3,
+        "grid.linestyle": "--",
+        "grid.linewidth": 0.6,
+        "pdf.fonttype": 42,
+        "ps.fonttype": 42,
+    })
+
+def add_trend_line(ax, x, y):
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    ok = np.isfinite(x) & np.isfinite(y)
+    if ok.sum() < 2:
+        return
+    x = x[ok]
+    y = y[ok]
+    if len(np.unique(x)) < 2:
+        return
+    coef = np.polyfit(x, y, 1)
+    xs = np.linspace(x.min(), x.max(), 100)
+    ys = coef[0] * xs + coef[1]
+    ax.plot(xs, ys, color="black", linestyle="--", linewidth=1.2)
+
+def main():
+    set_pub_style()
+
+    df = pd.read_csv(DATASET, sep="\t")
+    summary = pd.read_csv(SUMMARY, sep="\t")
+
+    fig, axes = plt.subplots(
+        nrows=1,
+        ncols=2,
+        figsize=(9.2, 4.6),
+        sharex=True,
+        sharey=False,
+    )
+
+    colors = {"MHC I": "#1f77b4", "MHC II": "#ff7f0e"}
+
+    for ax, mhc_class in zip(axes, ["MHC I", "MHC II"]):
+        sub = df[df["MHC_Class_clean"] == mhc_class].copy()
+
+        x = sub["rank_percentile_within_sample_class"].astype(float).values
+        y = sub["peptide_length"].astype(float).values
+
+        ax.scatter(
+            x, y,
+            s=18,
+            alpha=0.35,
+            color=colors[mhc_class],
+            edgecolor="none"
+        )
+
+        add_trend_line(ax, x, y)
+
+        ax.set_title(mhc_class)
+        ax.set_xlabel("Final rank percentile within MHC class\n(0 = best rank)")
+        ax.set_ylabel("Peptide length (amino acids)")
+        ax.set_xlim(-0.02, 1.02)
+
+        if mhc_class == "MHC I":
+            ax.set_ylim(7, 16)
+        else:
+            ax.set_ylim(8, 31)
+
+        row = summary[summary["MHC_Class"] == mhc_class]
+        if len(row):
+            rho = row["spearman_rho_length_vs_class_rank_percentile"].iloc[0]
+            pval = row["spearman_p_length_vs_class_rank_percentile"].iloc[0]
+            n = int(row["spearman_n_length_vs_class_rank_percentile"].iloc[0])
+
+            txt = f"Spearman ρ = {rho:.3f}\np = {pval:.3g}\nn = {n}"
+            ax.text(
+                0.03,
+                0.97,
+                txt,
+                transform=ax.transAxes,
+                ha="left",
+                va="top",
+                fontsize=10,
+                bbox=dict(boxstyle="round,pad=0.25", facecolor="white", edgecolor="0.7", alpha=0.9),
+            )
+
+    fig.suptitle("Peptide length versus final prioritisation rank", y=1.02)
+    fig.tight_layout()
+
+    png = PLOT_DIR / "Supplementary_Figure_S2_panel_B_length_vs_rank_percentile.png"
+    svg = PLOT_DIR / "Supplementary_Figure_S2_panel_B_length_vs_rank_percentile.svg"
+
+    fig.savefig(png, bbox_inches="tight")
+    fig.savefig(svg, bbox_inches="tight")
+    plt.close(fig)
+
+    print("Wrote:")
+    print(png)
+    print(svg)
+
+if __name__ == "__main__":
+    main()

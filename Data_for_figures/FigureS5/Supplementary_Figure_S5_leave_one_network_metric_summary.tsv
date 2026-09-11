@@ -1,0 +1,6 @@
+scenario	n_samples	median_spearman_rho_vs_default	q1_spearman_rho_vs_default	q3_spearman_rho_vs_default	median_top10_overlap_fraction	q1_top10_overlap_fraction	q3_top10_overlap_fraction	median_top20_overlap_fraction	q1_top20_overlap_fraction	q3_top20_overlap_fraction	total_scenario_top10_driver_rows	total_default_top10_driver_rows	metric_removed
+leave_out_Net_Betweenness	30	0.9879827141766164	0.9836141114069292	0.9905674538493612	0.9	0.9	1.0	0.95	0.9	1.0	36	34	Betweenness
+leave_out_Net_Degree	30	0.990510387289806	0.986734503360717	0.9924090315135397	0.9	0.9	1.0	0.95	0.95	0.9875	33	34	Degree
+leave_out_Net_Impact	30	0.9952894616229956	0.9919727710651371	0.996400806816082	1.0	0.9	1.0	0.95	0.95	1.0	33	34	Impact
+leave_out_Net_Strength	30	0.9951758598610768	0.990939905547906	0.99629839927053	1.0	0.9	1.0	0.95	0.95	1.0	33	34	Strength
+leave_out_Net_WCI	30	0.9834786951684792	0.9775301666596438	0.987282125428028	0.9	0.9	1.0	0.95	0.9125	0.9875	36	34	WCI

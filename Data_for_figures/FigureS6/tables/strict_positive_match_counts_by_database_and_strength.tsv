@@ -1,0 +1,6 @@
+database	evidence_strength	n_unique_candidates_any_strict_match	exact_peptide_candidates	exact_peptide_hla_candidates	relaxed_min8_peptide_candidates	relaxed_min8_peptide_hla_candidates	relaxed_min8_peptide_nonexact_candidates	relaxed_min8_peptide_hla_nonexact_candidates
+CEDAR	presentation	536	1	0	536	0	535	0
+CEDAR	strong_immunogenicity	22	0	0	22	0	22	0
+IEDB	presentation	539	1	0	539	0	538	0
+IEDB	strong_immunogenicity	22	0	0	22	0	22	0
+TSNAdb_v2	strong_immunogenicity	5	0	0	5	0	5	0

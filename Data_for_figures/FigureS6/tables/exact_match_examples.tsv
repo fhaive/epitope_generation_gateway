@@ -1,0 +1,3 @@
+database	evidence_strength	candidate_peptide	reference_peptide	match_type	reference_hla_original	reference_hla_normalized	pmid	reference_title
+CEDAR	presentation	HQRIHSGEKPY	HQRIHSGEKPY	exact	HLA-B*27:05 C67S mutant	HLA-B*27:05	29393594	The Peptide Repertoire of HLA-B27 may include Ligands with Lysine at P2 Anchor Position.
+IEDB	presentation	HQRIHSGEKPY	HQRIHSGEKPY	exact	HLA-B*27:05 C67S mutant	HLA-B*27:05	29393594	The Peptide Repertoire of HLA-B27 may include Ligands with Lysine at P2 Anchor Position.

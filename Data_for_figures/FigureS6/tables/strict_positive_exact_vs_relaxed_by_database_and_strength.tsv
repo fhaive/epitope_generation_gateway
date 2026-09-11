@@ -1,0 +1,8 @@
+database	evidence_strength	strict_reference_rows	unique_strict_reference_peptides	egg_candidates_exact_peptide_match	reference_peptides_exactly_matched	egg_candidates_relaxed_min8_match	reference_peptides_relaxed_min8_matched
+CEDAR	presentation	4294904	1206370	1	1	536	1209
+CEDAR	strong_immunogenicity	51650	19036	0	0	22	19
+IEDB	presentation	4386361	1264427	1	1	539	1232
+IEDB	strong_immunogenicity	176085	67937	0	0	22	19
+TSNAdb_v2	presentation	599	493	0	0	0	0
+TSNAdb_v2	strong_immunogenicity	1188	1116	0	0	5	1
+TSNAdb_v2	strong_immunogenicity_and_presentation	67	65	0	0	0	0

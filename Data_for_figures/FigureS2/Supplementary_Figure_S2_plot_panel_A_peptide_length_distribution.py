@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent
+
+DATASET = BASE / "Supplementary_Figure_S2_source_data_per_candidate.tsv"
+SUMMARY = BASE / "Supplementary_Figure_S2_summary_statistics.tsv"
+PLOT_DIR = BASE / "plots"
+
+PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+def set_pub_style():
+    mpl.rcParams.update({
+        "figure.dpi": 110,
+        "savefig.dpi": 300,
+        "font.size": 12,
+        "axes.labelsize": 12,
+        "axes.titlesize": 13,
+        "xtick.labelsize": 10,
+        "ytick.labelsize": 10,
+        "legend.fontsize": 11,
+        "axes.spines.top": False,
+        "axes.spines.right": False,
+        "axes.grid": True,
+        "grid.alpha": 0.3,
+        "grid.linestyle": "--",
+        "grid.linewidth": 0.6,
+        "pdf.fonttype": 42,
+        "ps.fonttype": 42,
+    })
+
+def draw_box(ax, data, pos, color):
+    bp = ax.boxplot(
+        data,
+        positions=[pos],
+        widths=0.55,
+        patch_artist=True,
+        showfliers=True,
+    )
+
+    for patch in bp["boxes"]:
+        patch.set_facecolor(color)
+        patch.set_alpha(0.85)
+        patch.set_edgecolor("black")
+        patch.set_linewidth(0.9)
+
+    for k in ["medians", "whiskers", "caps"]:
+        for artist in bp[k]:
+            artist.set_color("black")
+            artist.set_linewidth(1.0)
+
+    for flier in bp["fliers"]:
+        flier.set_marker("o")
+        flier.set_markersize(3)
+        flier.set_markerfacecolor(color)
+        flier.set_markeredgecolor("black")
+        flier.set_alpha(0.5)
+
+def main():
+    set_pub_style()
+
+    df = pd.read_csv(DATASET, sep="\t")
+    summary = pd.read_csv(SUMMARY, sep="\t")
+
+    all_color = "#1f77b4"
+    top_color = "#ff7f0e"
+
+    fig, axes = plt.subplots(
+        nrows=1,
+        ncols=2,
+        figsize=(8.8, 4.8),
+        sharey=False,
+    )
+
+    for ax, mhc_class in zip(axes, ["MHC I", "MHC II"]):
+        sub = df[df["MHC_Class_clean"] == mhc_class].copy()
+        top = sub[sub["is_top10_per_sample"] == True].copy()
+
+        draw_box(ax, sub["peptide_length"].dropna().values, 0, all_color)
+        draw_box(ax, top["peptide_length"].dropna().values, 1, top_color)
+
+        ax.set_title(mhc_class)
+        ax.set_xticks([0, 1])
+        ax.set_xticklabels(["All", "Top 10"])
+        ax.set_ylabel("Peptide length (amino acids)")
+        ax.set_xlim(-0.6, 1.6)
+
+        ymax = int(max(sub["peptide_length"].max(), top["peptide_length"].max()) + 3)
+        if mhc_class == "MHC I":
+            ax.set_ylim(0, max(18, ymax))
+        else:
+            ax.set_ylim(0, max(33, ymax))
+
+        row = summary[summary["MHC_Class"] == mhc_class]
+        if len(row):
+            pval = row["mannwhitney_top10_vs_non_top10_p"].iloc[0]
+            ax.text(
+                0.5,
+                0.96,
+                f"MW p = {pval:.3g}",
+                transform=ax.transAxes,
+                ha="center",
+                va="top",
+                fontsize=10,
+            )
+
+    fig.suptitle("Peptide length distribution before and after prioritisation", y=1.02)
+
+    handles = [
+        plt.Rectangle((0, 0), 1, 1, facecolor=all_color, edgecolor="black", alpha=0.85, label="All candidates"),
+        plt.Rectangle((0, 0), 1, 1, facecolor=top_color, edgecolor="black", alpha=0.85, label="Top 10 per sample"),
+    ]
+
+    fig.legend(
+        handles=handles,
+        frameon=False,
+        loc="center left",
+        bbox_to_anchor=(1.01, 0.5),
+        title="Candidate set",
+    )
+
+    fig.tight_layout(rect=[0, 0, 0.84, 1])
+
+    png = PLOT_DIR / "Supplementary_Figure_S2_panel_A_peptide_length_distribution.png"
+    svg = PLOT_DIR / "Supplementary_Figure_S2_panel_A_peptide_length_distribution.svg"
+
+    fig.savefig(png, bbox_inches="tight")
+    fig.savefig(svg, bbox_inches="tight")
+    plt.close(fig)
+
+    print("Wrote:")
+    print(png)
+    print(svg)
+
+if __name__ == "__main__":
+    main()
