@@ -1,5 +1,0 @@
-criterion	criterion_label	supported_candidates	total_candidates	supported_fraction
-min8	Min-8 containment	545	2288	0.2381993006993007
-min8_cov50	Min-8 + >=50% coverage	192	2288	0.08391608391608392
-min8_cov70	Min-8 + >=70% coverage	41	2288	0.01791958041958042
-min8_cov80	Min-8 + >=80% coverage	14	2288	0.006118881118881119
