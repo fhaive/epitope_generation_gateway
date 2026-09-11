@@ -1,0 +1,13 @@
+CC0 1.0 Universal Public Domain Dedication
+
+The processed numerical source-data files in this directory and its
+subdirectories are released under the Creative Commons CC0 1.0 Universal
+Public Domain Dedication.
+
+This applies to processed numerical figure source-data files, including CSV,
+TSV, and TSV.GZ files provided for manuscript figures.
+
+This CC0 dedication does not apply to source code, scripts, workflow files,
+or the main repository contents unless explicitly stated otherwise. Source
+code in this repository remains governed by the repository-level GPL-3.0
+licence.
