@@ -1,0 +1,6 @@
+metric	value
+n_candidates	2288
+n_pairwise_matches_all_scopes_all_evidence	16538
+n_pairwise_relaxed_min8_supported_evidence_matches	15099
+n_original_min8_supported_columns_detected	7
+n_min8_rebuilt_vs_original_mismatches	0
